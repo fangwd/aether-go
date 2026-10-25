@@ -1,5 +1,6 @@
 -- name: StockLevels :many
 SELECT i.variant_id, v.product_id, p.name AS product_name, v.name AS variant_name, v.sku,
+       p.variant_axes, v.attributes AS variant_attributes,
        i.on_hand, i.reserved, i.available::bigint AS available
   FROM inventory i
   JOIN product_variant v ON v.site_id = i.site_id AND v.id = i.variant_id

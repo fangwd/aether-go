@@ -7,6 +7,7 @@ package db
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/google/uuid"
 )
@@ -242,6 +243,7 @@ func (q *Queries) SellHeld(ctx context.Context, arg SellHeldParams) error {
 
 const stockLevels = `-- name: StockLevels :many
 SELECT i.variant_id, v.product_id, p.name AS product_name, v.name AS variant_name, v.sku,
+       p.variant_axes, v.attributes AS variant_attributes,
        i.on_hand, i.reserved, i.available::bigint AS available
   FROM inventory i
   JOIN product_variant v ON v.site_id = i.site_id AND v.id = i.variant_id
@@ -251,14 +253,16 @@ SELECT i.variant_id, v.product_id, p.name AS product_name, v.name AS variant_nam
 `
 
 type StockLevelsRow struct {
-	VariantID   uuid.UUID
-	ProductID   uuid.UUID
-	ProductName string
-	VariantName *string
-	Sku         *string
-	OnHand      int64
-	Reserved    int64
-	Available   int64
+	VariantID         uuid.UUID
+	ProductID         uuid.UUID
+	ProductName       string
+	VariantName       *string
+	Sku               *string
+	VariantAxes       []string
+	VariantAttributes json.RawMessage
+	OnHand            int64
+	Reserved          int64
+	Available         int64
 }
 
 func (q *Queries) StockLevels(ctx context.Context, variantID *uuid.UUID) ([]StockLevelsRow, error) {
@@ -276,6 +280,8 @@ func (q *Queries) StockLevels(ctx context.Context, variantID *uuid.UUID) ([]Stoc
 			&i.ProductName,
 			&i.VariantName,
 			&i.Sku,
+			&i.VariantAxes,
+			&i.VariantAttributes,
 			&i.OnHand,
 			&i.Reserved,
 			&i.Available,

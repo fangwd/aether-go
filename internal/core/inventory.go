@@ -2,7 +2,9 @@ package core
 
 import (
 	"context"
+	"encoding/json"
 	"slices"
+	"strings"
 
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5"
@@ -15,9 +17,32 @@ func stockJSON(rows []db.StockLevelsRow) []oapi.StockLevel {
 	out := make([]oapi.StockLevel, len(rows))
 	for i, r := range rows {
 		out[i] = oapi.StockLevel{VariantId: r.VariantID, ProductId: r.ProductID, ProductName: r.ProductName,
-			VariantName: r.VariantName, Sku: r.Sku, OnHand: r.OnHand, Reserved: r.Reserved, Available: r.Available}
+			VariantName: stockVariantName(r), Sku: r.Sku, OnHand: r.OnHand, Reserved: r.Reserved, Available: r.Available}
 	}
 	return out
+}
+
+// stockVariantName is the variant's own name or, for an unnamed variant, its
+// axis values in axis order ("Large / Red"); nil for a product's only variant.
+func stockVariantName(r db.StockLevelsRow) *string {
+	if r.VariantName != nil {
+		return r.VariantName
+	}
+	var attributes map[string]any
+	if err := json.Unmarshal(r.VariantAttributes, &attributes); err != nil {
+		return nil
+	}
+	var values []string
+	for _, axis := range r.VariantAxes {
+		if v, ok := attributes[axis].(string); ok && v != "" {
+			values = append(values, v)
+		}
+	}
+	if len(values) == 0 {
+		return nil
+	}
+	name := strings.Join(values, " / ")
+	return &name
 }
 
 // ListInventory is every stock-tracked variant.

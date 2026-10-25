@@ -328,8 +328,13 @@ func TestStockDrivesAvailability(t *testing.T) {
 	if status, _ := api.Post(adjust, shop.Key, apitest.M{"quantity": -1, "kind": "adjustment"}); status != http.StatusUnprocessableEntity {
 		t.Errorf("negative stock: %d", status)
 	}
-	if _, levels := api.Get(shop.Admin("/inventory"), shop.Key); levels.Len() != 1 {
+	_, levels := api.Get(shop.Admin("/inventory"), shop.Key)
+	if levels.Len() != 1 {
 		t.Errorf("levels %s", levels)
+	}
+	// Unnamed, so named by its axis values.
+	if got := levels.Get(0, "variant_name").V; got != "Large" {
+		t.Errorf("variant_name %v", got)
 	}
 }
 
