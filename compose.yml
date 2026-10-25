@@ -71,5 +71,7 @@ services:
       <<: *aether-env
       AETHER_WORKER_DATABASE_URL: postgresql://aether_worker:aether_worker@postgres/aether
       AETHER_EMAIL_FALLBACK_FROM: shops@provider.example
+      AETHER_CATALOG_WEBHOOK_URL: ${AETHER_CATALOG_WEBHOOK_URL:-}
+      AETHER_CATALOG_WEBHOOK_SECRET: ${AETHER_CATALOG_WEBHOOK_SECRET:-}
     depends_on:
       aether-migrate: { condition: service_completed_successfully }
