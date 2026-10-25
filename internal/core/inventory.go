@@ -96,6 +96,9 @@ func (s *Server) Adjust(ctx context.Context, req oapi.AdjustRequestObject) (oapi
 		}); err != nil {
 			return err
 		}
+		if err := catalogChanged(ctx, q, req.SiteId); err != nil {
+			return err
+		}
 		rows, err = q.StockLevels(ctx, &req.VariantId)
 		return err
 	})

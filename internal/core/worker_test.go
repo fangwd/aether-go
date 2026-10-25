@@ -309,3 +309,47 @@ func TestRefusedEmailsAreNotRetried(t *testing.T) {
 		t.Errorf("the event is done, not retried: %d unpublished", n)
 	}
 }
+
+type catalogHook struct{ sites []uuid.UUID }
+
+func (h *catalogHook) CatalogChanged(_ context.Context, site uuid.UUID) error {
+	h.sites = append(h.sites, site)
+	return nil
+}
+
+func TestCatalogChangesAreAnnouncedOncePerQuietPeriod(t *testing.T) {
+	w := newWorkerWorld(t) // creating Pad Thai is the first change
+	hook := &catalogHook{}
+	w.worker.CatalogHook = hook
+	ctx := context.Background()
+	id := w.product.Get("id").Str()
+	w.api.Patch(w.shop.Admin("/products/"+id), w.shop.Key, apitest.M{"name": "Pad See Ew"})
+	w.api.Post(w.shop.Admin("/categories"), w.shop.Key, apitest.M{"slug": "noodles", "name": "Noodles"})
+
+	if _, err := w.worker.ProcessEvents(ctx); err != nil {
+		t.Fatal(err)
+	}
+	if len(hook.sites) != 0 {
+		t.Fatalf("announced before the quiet period: %v", hook.sites)
+	}
+
+	if _, err := w.api.Worker.Exec(ctx, "UPDATE outbox_event SET next_retry_at = now() WHERE topic = 'catalog.changed'"); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := w.worker.ProcessEvents(ctx); err != nil {
+		t.Fatal(err)
+	}
+	if len(hook.sites) != 1 || hook.sites[0].String() != w.shop.ID.String() {
+		t.Fatalf("announced %v, want once for %s", hook.sites, w.shop.ID)
+	}
+
+	// Once announced, the next change queues a new notice.
+	w.api.Patch(w.shop.Admin("/products/"+id), w.shop.Key, apitest.M{"price": "16.00"})
+	var waiting int
+	if err := w.api.Worker.QueryRow(ctx, "SELECT count(*) FROM outbox_event WHERE topic = 'catalog.changed' AND published_at IS NULL").Scan(&waiting); err != nil {
+		t.Fatal(err)
+	}
+	if waiting != 1 {
+		t.Errorf("waiting notices = %d, want 1", waiting)
+	}
+}

@@ -81,3 +81,11 @@ SELECT EXISTS (SELECT 1 FROM "order" WHERE id = $1 AND access_token_hash = $2);
 
 -- name: OrderOfCustomer :one
 SELECT EXISTS (SELECT 1 FROM "order" WHERE id = $1 AND customer_id = $2);
+
+-- name: NoteCatalogChanged :exec
+-- At most one waiting notice per site (RLS scopes the check); a parked one
+-- (failed for good) does not block new ones.
+INSERT INTO outbox_event (site_id, id, topic, payload, next_retry_at)
+SELECT @site_id, @id, 'catalog.changed', '{}'::jsonb, now() + make_interval(secs => @delay_secs::int)
+ WHERE NOT EXISTS (SELECT 1 FROM outbox_event
+                    WHERE topic = 'catalog.changed' AND published_at IS NULL AND next_retry_at <> 'infinity');

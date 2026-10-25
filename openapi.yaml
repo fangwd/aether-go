@@ -2510,6 +2510,13 @@ paths:
         schema:
           type: string
           nullable: true
+      - name: q
+        in: query
+        description: Only products whose name or descriptions contain every word, ignoring case.
+        required: false
+        schema:
+          type: string
+          nullable: true
       - name: cursor
         in: query
         required: false

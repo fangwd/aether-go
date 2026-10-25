@@ -116,11 +116,16 @@ func work(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
+	hook, err := catalogHook()
+	if err != nil {
+		return err
+	}
 	w := &core.Worker{
 		Pool:         pool,
 		Mailer:       mail,
 		Payments:     paymentGateway(),
 		FallbackFrom: env("AETHER_EMAIL_FALLBACK_FROM", ""),
+		CatalogHook:  hook,
 	}
 	slog.Info("worker started")
 	w.Run(ctx)

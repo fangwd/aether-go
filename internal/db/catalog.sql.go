@@ -724,17 +724,27 @@ SELECT p.id FROM product p
            SELECT 1 FROM product_category pc
              JOIN category c ON c.site_id = pc.site_id AND c.id = pc.category_id
             WHERE pc.product_id = p.id AND c.slug = $2 AND c.status = 'active'))
- ORDER BY p.id DESC LIMIT $3
+   AND ($3::text IS NULL OR NOT EXISTS (
+           SELECT 1 FROM unnest(regexp_split_to_array(lower(trim($3)), '\s+')) AS w(word)
+            WHERE w.word <> ''
+              AND strpos(lower(concat_ws(' ', p.name, p.short_description, p.description)), w.word) = 0))
+ ORDER BY p.id DESC LIMIT $4
 `
 
 type StorefrontProductIDsParams struct {
 	Cursor   *uuid.UUID
 	Category *string
+	Q        *string
 	Lim      int32
 }
 
 func (q *Queries) StorefrontProductIDs(ctx context.Context, arg StorefrontProductIDsParams) ([]uuid.UUID, error) {
-	rows, err := q.db.Query(ctx, storefrontProductIDs, arg.Cursor, arg.Category, arg.Lim)
+	rows, err := q.db.Query(ctx, storefrontProductIDs,
+		arg.Cursor,
+		arg.Category,
+		arg.Q,
+		arg.Lim,
+	)
 	if err != nil {
 		return nil, err
 	}

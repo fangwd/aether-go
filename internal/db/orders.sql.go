@@ -149,6 +149,26 @@ func (q *Queries) MarkCancelled(ctx context.Context, id uuid.UUID) error {
 	return err
 }
 
+const noteCatalogChanged = `-- name: NoteCatalogChanged :exec
+INSERT INTO outbox_event (site_id, id, topic, payload, next_retry_at)
+SELECT $1, $2, 'catalog.changed', '{}'::jsonb, now() + make_interval(secs => $3::int)
+ WHERE NOT EXISTS (SELECT 1 FROM outbox_event
+                    WHERE topic = 'catalog.changed' AND published_at IS NULL AND next_retry_at <> 'infinity')
+`
+
+type NoteCatalogChangedParams struct {
+	SiteID    uuid.UUID
+	ID        uuid.UUID
+	DelaySecs int32
+}
+
+// At most one waiting notice per site (RLS scopes the check); a parked one
+// (failed for good) does not block new ones.
+func (q *Queries) NoteCatalogChanged(ctx context.Context, arg NoteCatalogChangedParams) error {
+	_, err := q.db.Exec(ctx, noteCatalogChanged, arg.SiteID, arg.ID, arg.DelaySecs)
+	return err
+}
+
 const orderAddresses = `-- name: OrderAddresses :many
 SELECT type, first_name, last_name, company, line1, line2, city, state, postal_code, country_code, phone
   FROM order_address WHERE order_id = $1

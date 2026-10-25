@@ -15,6 +15,7 @@ import (
 	"aether/internal/providers/ses"
 	"aether/internal/providers/smtp"
 	"aether/internal/providers/stripe"
+	"aether/internal/providers/webhook"
 )
 
 var outbound = &http.Client{Timeout: 10 * time.Second}
@@ -34,6 +35,20 @@ func imageStore() ports.ImageStore {
 		Variant:     env("AETHER_CLOUDFLARE_IMAGES_VARIANT", "public"),
 		Environment: env("AETHER_CLOUDFLARE_IMAGES_ENVIRONMENT", "development"),
 	})
+}
+
+// catalogHook posts catalog.changed to the partner that renders sites (Nova's
+// backend); without a URL, changes are not announced.
+func catalogHook() (ports.CatalogHook, error) {
+	url, secret := env("AETHER_CATALOG_WEBHOOK_URL", ""), env("AETHER_CATALOG_WEBHOOK_SECRET", "")
+	if url == "" && secret == "" {
+		slog.Warn("no catalog webhook configured; catalog changes are not announced")
+		return nil, nil
+	}
+	if url == "" || len(secret) < 32 {
+		return nil, fmt.Errorf("AETHER_CATALOG_WEBHOOK_URL needs AETHER_CATALOG_WEBHOOK_SECRET of at least 32 characters, and the other way round")
+	}
+	return webhook.New(outbound, url, secret), nil
 }
 
 // paymentGateway is Stripe Connect; payment endpoints answer 503 until it is

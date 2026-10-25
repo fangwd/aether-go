@@ -1242,8 +1242,11 @@ type PayOrderParams struct {
 // ListProductsParams defines parameters for ListProducts.
 type ListProductsParams struct {
 	// Category Only products in the category with this slug.
-	Category *string             `form:"category,omitempty" json:"category,omitempty"`
-	Cursor   *openapi_types.UUID `form:"cursor,omitempty" json:"cursor,omitempty"`
+	Category *string `form:"category,omitempty" json:"category,omitempty"`
+
+	// Q Only products whose name or descriptions contain every word, ignoring case.
+	Q      *string             `form:"q,omitempty" json:"q,omitempty"`
+	Cursor *openapi_types.UUID `form:"cursor,omitempty" json:"cursor,omitempty"`
 
 	// Limit 1 to 100, default 50.
 	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
@@ -4374,6 +4377,19 @@ func (siw *ServerInterfaceWrapper) ListProducts(w http.ResponseWriter, r *http.R
 			siw.ErrorHandlerFunc(w, r, &RequiredParamError{ParamName: "category"})
 		} else {
 			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "category", Err: err})
+		}
+		return
+	}
+
+	// ------------- Optional query parameter "q" -------------
+
+	err = runtime.BindQueryParameterWithOptions("form", true, false, "q", r.URL.Query(), &params.Q, runtime.BindQueryParameterOptions{Type: "string", Format: ""})
+	if err != nil {
+		var requiredError *runtime.RequiredParameterError
+		if errors.As(err, &requiredError) {
+			siw.ErrorHandlerFunc(w, r, &RequiredParamError{ParamName: "q"})
+		} else {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "q", Err: err})
 		}
 		return
 	}

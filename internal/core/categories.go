@@ -87,8 +87,11 @@ func (s *Server) CreateCategory(ctx context.Context, req oapi.CreateCategoryRequ
 			Name: strings.TrimSpace(req.Body.Name), Description: req.Body.Description, Status: status,
 			SortOrder: deref(req.Body.SortOrder, 0),
 		})
+		if err != nil {
+			return err
+		}
 		c = db.CategoriesRow(row)
-		return err
+		return catalogChanged(ctx, q, req.SiteId)
 	})
 	if err != nil {
 		return nil, err
@@ -121,8 +124,11 @@ func (s *Server) UpdateCategory(ctx context.Context, req oapi.UpdateCategoryRequ
 			ID: req.CategoryId, ParentID: req.Body.ParentId, Slug: req.Body.Slug, Name: strings.TrimSpace(req.Body.Name),
 			Description: req.Body.Description, Status: status, SortOrder: deref(req.Body.SortOrder, 0),
 		})
+		if err != nil {
+			return err
+		}
 		c = db.CategoriesRow(row)
-		return err
+		return catalogChanged(ctx, q, req.SiteId)
 	})
 	if err != nil {
 		return nil, err
@@ -138,10 +144,13 @@ func (s *Server) DeleteCategory(ctx context.Context, req oapi.DeleteCategoryRequ
 	}
 	err := db.InSite(ctx, s.Pool, req.SiteId, func(_ pgx.Tx, q *db.Queries) error {
 		n, err := q.DeleteCategory(ctx, req.CategoryId)
-		if err == nil && n == 0 {
+		if err != nil {
+			return err
+		}
+		if n == 0 {
 			return errNotFound
 		}
-		return err
+		return catalogChanged(ctx, q, req.SiteId)
 	})
 	if err != nil {
 		return nil, err

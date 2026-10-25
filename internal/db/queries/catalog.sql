@@ -52,6 +52,10 @@ SELECT p.id FROM product p
            SELECT 1 FROM product_category pc
              JOIN category c ON c.site_id = pc.site_id AND c.id = pc.category_id
             WHERE pc.product_id = p.id AND c.slug = sqlc.narg(category) AND c.status = 'active'))
+   AND (sqlc.narg(q)::text IS NULL OR NOT EXISTS (
+           SELECT 1 FROM unnest(regexp_split_to_array(lower(trim(sqlc.narg(q))), '\s+')) AS w(word)
+            WHERE w.word <> ''
+              AND strpos(lower(concat_ws(' ', p.name, p.short_description, p.description)), w.word) = 0))
  ORDER BY p.id DESC LIMIT @lim;
 
 -- name: ActiveProductIDBySlug :one

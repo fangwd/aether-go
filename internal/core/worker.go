@@ -43,6 +43,8 @@ type Worker struct {
 	// FallbackFrom is the provider's verified sender address, used until a site
 	// verifies its own domain. Empty: such sites send nothing.
 	FallbackFrom string
+	// CatalogHook hears about catalog changes; nil drops them.
+	CatalogHook ports.CatalogHook
 }
 
 // Run works until ctx ends: events every 2 seconds, housekeeping every
@@ -184,6 +186,11 @@ func (w *Worker) handle(ctx context.Context, q *db.Queries, topic string, raw js
 			return err
 		}
 		return w.send(ctx, q, order.Email, orderRefunded(shop, order, money(amount, order.Currency)))
+	case "catalog.changed":
+		if w.CatalogHook == nil {
+			return nil
+		}
+		return w.CatalogHook.CatalogChanged(ctx, site.ID)
 	case "account.code":
 		if payload.To == "" || payload.Code == "" {
 			return nil

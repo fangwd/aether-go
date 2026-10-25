@@ -450,6 +450,9 @@ func (s *Server) CreateProduct(ctx context.Context, req oapi.CreateProductReques
 		if err := replaceMedia(ctx, q, req.SiteId, id, deref(body.Media, nil)); err != nil {
 			return err
 		}
+		if err := catalogChanged(ctx, q, req.SiteId); err != nil {
+			return err
+		}
 		product, err = loadProduct(ctx, q, id, site.Currency, adminView, s.Images)
 		return err
 	})
@@ -560,6 +563,9 @@ func (s *Server) UpdateProduct(ctx context.Context, req oapi.UpdateProductReques
 				return err
 			}
 		}
+		if err := catalogChanged(ctx, q, req.SiteId); err != nil {
+			return err
+		}
 		product, err = loadProduct(ctx, q, req.ProductId, site.Currency, adminView, s.Images)
 		return err
 	})
@@ -597,6 +603,9 @@ func (s *Server) PutVariants(ctx context.Context, req oapi.PutVariantsRequestObj
 		if err := replaceVariants(ctx, q, req.SiteId, req.ProductId, req.Body.VariantAxes, variants); err != nil {
 			return err
 		}
+		if err := catalogChanged(ctx, q, req.SiteId); err != nil {
+			return err
+		}
 		product, err = loadProduct(ctx, q, req.ProductId, site.Currency, adminView, s.Images)
 		return err
 	})
@@ -632,6 +641,9 @@ func (s *Server) PutOptionGroups(ctx context.Context, req oapi.PutOptionGroupsRe
 		if err := replaceOptionGroups(ctx, q, req.SiteId, req.ProductId, groups); err != nil {
 			return err
 		}
+		if err := catalogChanged(ctx, q, req.SiteId); err != nil {
+			return err
+		}
 		product, err = loadProduct(ctx, q, req.ProductId, site.Currency, adminView, s.Images)
 		return err
 	})
@@ -650,7 +662,7 @@ func (s *Server) ListProducts(ctx context.Context, req oapi.ListProductsRequestO
 		if err != nil {
 			return err
 		}
-		ids, err := q.StorefrontProductIDs(ctx, db.StorefrontProductIDsParams{Cursor: req.Params.Cursor, Category: req.Params.Category, Lim: int32(limit + 1)})
+		ids, err := q.StorefrontProductIDs(ctx, db.StorefrontProductIDsParams{Cursor: req.Params.Cursor, Category: req.Params.Category, Q: req.Params.Q, Lim: int32(limit + 1)})
 		if err != nil {
 			return err
 		}

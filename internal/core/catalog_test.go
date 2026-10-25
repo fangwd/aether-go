@@ -3,6 +3,7 @@ package core_test
 import (
 	"fmt"
 	"net/http"
+	"net/url"
 	"reflect"
 	"testing"
 
@@ -362,6 +363,26 @@ func TestCategoriesFilterTheStorefront(t *testing.T) {
 	}
 	if _, listed := api.Get(shop.Store("/categories"), ""); listed.Len() != 2 {
 		t.Errorf("categories %s", listed)
+	}
+}
+
+func TestStorefrontSearchMatchesEveryWord(t *testing.T) {
+	api := apitest.New(t)
+	shop := api.OpenShop()
+	shop.PadThai()
+	api.Post(shop.Admin("/products"), shop.Key, apitest.M{"slug": "green-curry", "name": "Green Curry",
+		"price": "14", "status": "active", "short_description": "Thai, with rice"})
+
+	for query, want := range map[string]int{
+		"thai":       2,
+		"THAI rice":  1,
+		"pad  curry": 0,
+		"%":          0,
+	} {
+		_, found := api.Get(shop.Store("/products")+"?"+url.Values{"q": {query}}.Encode(), "")
+		if found.Get("items").Len() != want {
+			t.Errorf("q=%q found %d, want %d", query, found.Get("items").Len(), want)
+		}
 	}
 }
 
