@@ -1,0 +1,4527 @@
+openapi: 3.0.3
+info:
+  title: aether
+  description: Commerce API for provider sites
+  license:
+    name: ''
+  version: 0.1.0
+paths:
+  /v1/sites/{site_id}:
+    get:
+      tags:
+      - site
+      summary: Public site settings a storefront needs.
+      operationId: get_site
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Site'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+    put:
+      tags:
+      - site
+      summary: |-
+        Turns commerce on for a site, or updates its settings. Owner only. The
+        currency is fixed once the site has orders.
+      operationId: put_site
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutSite'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Site'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/account:
+    get:
+      tags:
+      - account
+      summary: The signed-in account.
+      operationId: me
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - session: []
+    post:
+      tags:
+      - account
+      summary: |-
+        Creates an account and signs it in; a verification code is emailed.
+        Orders placed as a guest with this email join the account once the
+        email is verified.
+      operationId: sign_up
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Credentials'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/account/email-verification:
+    post:
+      tags:
+      - account
+      summary: |-
+        Emails a new verification code. Always 202, so it reveals nothing about
+        which emails have accounts.
+      operationId: request_verification
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailInput'
+        required: true
+      responses:
+        '202': {}
+  /v1/sites/{site_id}/account/email-verification/confirm:
+    post:
+      tags:
+      - account
+      operationId: confirm_verification
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailCode'
+        required: true
+      responses:
+        '204': {}
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/account/password-reset:
+    post:
+      tags:
+      - account
+      summary: Emails a password reset code. Always 202.
+      operationId: request_reset
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailInput'
+        required: true
+      responses:
+        '202': {}
+  /v1/sites/{site_id}/account/password-reset/confirm:
+    post:
+      tags:
+      - account
+      summary: |-
+        Sets a new password and ends every session. Receiving the code proves
+        the email address too, so it is marked verified.
+      operationId: confirm_reset
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordReset'
+        required: true
+      responses:
+        '204': {}
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/account/sessions:
+    post:
+      tags:
+      - account
+      operationId: sign_in
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Credentials'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/account/sessions/current:
+    delete:
+      tags:
+      - account
+      summary: Ends the session the request is signed in with.
+      operationId: sign_out
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - session: []
+  /v1/sites/{site_id}/admin/categories:
+    get:
+      tags:
+      - catalog
+      summary: Every category, as a flat list ordered for display; build the tree from `parent_id`.
+      operationId: list_categories
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - catalog
+      operationId: create_category
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/categories/{category_id}:
+    put:
+      tags:
+      - catalog
+      summary: Replaces a category's fields. A category cannot move under its own subtree.
+      operationId: update_category
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: category_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - catalog
+      summary: Deletes a category and its subcategories; products stay, unassigned.
+      operationId: delete_category
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: category_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/email-sender:
+    get:
+      tags:
+      - email
+      summary: The sending domain, with its status refreshed from the email provider while pending.
+      operationId: get_sender
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sender'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    put:
+      tags:
+      - email
+      summary: |-
+        Sets the sending domain (owner only) and registers it with the email provider. Changing
+        the domain starts verification again.
+      operationId: put_sender
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SenderInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sender'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - email
+      summary: Removes the site's own domain; emails fall back to the provider's address.
+      operationId: delete_sender
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/inventory:
+    get:
+      tags:
+      - inventory
+      summary: Every stock-tracked variant.
+      operationId: list_inventory
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StockLevel'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/inventory/{variant_id}/adjustments:
+    post:
+      tags:
+      - inventory
+      summary: |-
+        Changes a variant's on-hand stock. The first adjustment starts tracking
+        stock for the variant; untracked variants are always purchasable.
+      operationId: adjust
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: variant_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adjust'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StockLevel'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/media:
+    post:
+      tags:
+      - catalog
+      summary: Starts an image upload. Attach the returned `media_id` to products.
+      operationId: create_upload
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUpload'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Upload'
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/orders:
+    get:
+      tags:
+      - orders
+      summary: Orders, newest first.
+      operationId: list_orders
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: payment_status
+        in: query
+        required: false
+        schema:
+          type: string
+          nullable: true
+      - name: fulfilment_status
+        in: query
+        required: false
+        schema:
+          type: string
+          nullable: true
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+          format: uuid
+          nullable: true
+      - name: limit
+        in: query
+        description: 1 to 100, default 50.
+        required: false
+        schema:
+          type: integer
+          format: int64
+          nullable: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderSummaryPage'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/orders/{order_id}:
+    get:
+      tags:
+      - orders
+      operationId: admin_get_order
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/orders/{order_id}/cancel:
+    post:
+      tags:
+      - orders
+      summary: Cancels an unfulfilled, unpaid order and releases its held stock.
+      operationId: cancel_order
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cancel'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/orders/{order_id}/refunds:
+    post:
+      tags:
+      - payments
+      summary: Refunds part or all of a paid order through the payment provider.
+      operationId: refund_order
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefundInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/orders/{order_id}/shipments:
+    post:
+      tags:
+      - orders
+      summary: Records a parcel (or a pickup handover) for some or all of an order.
+      operationId: create_shipment
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateShipment'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/orders/{order_id}/shipments/{shipment_id}:
+    patch:
+      tags:
+      - orders
+      operationId: update_shipment
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: shipment_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateShipment'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/payments:
+    get:
+      tags:
+      - payments
+      summary: The site's payment account, refreshed from the provider.
+      operationId: account_status
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentAccount'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/payments/onboarding:
+    post:
+      tags:
+      - payments
+      summary: |-
+        Connects the site to the payment provider (owner only) and returns a link
+        to the provider's onboarding. Call again to resume unfinished onboarding.
+      operationId: start_onboarding
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Onboarding'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OnboardingLink'
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/products:
+    get:
+      tags:
+      - catalog
+      summary: Products of every status, newest first.
+      operationId: admin_list_products
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: status
+        in: query
+        required: false
+        schema:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/ProductStatus'
+      - name: cursor
+        in: query
+        description: '`next_cursor` from the previous page.'
+        required: false
+        schema:
+          type: string
+          format: uuid
+          nullable: true
+      - name: limit
+        in: query
+        description: 1 to 100, default 50.
+        required: false
+        schema:
+          type: integer
+          format: int64
+          nullable: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPage'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - catalog
+      summary: Creates a product with its variants, add-ons, categories and media.
+      operationId: create_product
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProduct'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/products/{product_id}:
+    get:
+      tags:
+      - catalog
+      operationId: admin_get_product
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    patch:
+      tags:
+      - catalog
+      summary: Updates product fields; variants and add-ons have their own endpoints.
+      operationId: update_product
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProduct'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/products/{product_id}/option-groups:
+    put:
+      tags:
+      - catalog
+      summary: Replaces the product's add-on option groups and their values.
+      operationId: put_option_groups
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReplaceOptionGroups'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/products/{product_id}/variants:
+    put:
+      tags:
+      - catalog
+      summary: Replaces the product's variant axes and variants.
+      operationId: put_variants
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: product_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReplaceVariants'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/promotions:
+    get:
+      tags:
+      - promotions
+      operationId: list_promotions
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PromotionView'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - promotions
+      operationId: create_promotion
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromotionInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromotionView'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/promotions/{id}:
+    get:
+      tags:
+      - promotions
+      operationId: get_promotion
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromotionView'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    put:
+      tags:
+      - promotions
+      summary: Replaces a promotion's settings; its usage count is kept.
+      operationId: update_promotion
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromotionInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PromotionView'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/promotions/{id}/coupons:
+    get:
+      tags:
+      - promotions
+      operationId: list_coupons
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coupon'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - promotions
+      summary: Adds a code; the promotion then applies only with a code.
+      operationId: create_coupon
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CouponInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coupon'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/promotions/{id}/coupons/{coupon_id}:
+    patch:
+      tags:
+      - promotions
+      operationId: update_coupon
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: coupon_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CouponStatusInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coupon'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/shipping-methods:
+    get:
+      tags:
+      - shipping
+      operationId: list_methods
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Method'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - shipping
+      operationId: create_method
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MethodInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Method'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/shipping-methods/{id}:
+    put:
+      tags:
+      - shipping
+      operationId: update_method
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MethodInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Method'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - shipping
+      summary: Deletes a method and its rates. Past orders keep the method's code.
+      operationId: delete_method
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/shipping-rates:
+    get:
+      tags:
+      - shipping
+      operationId: list_shipping_rates
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Rate'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - shipping
+      operationId: create_shipping_rate
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RateInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rate'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/shipping-rates/{id}:
+    put:
+      tags:
+      - shipping
+      operationId: update_shipping_rate
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RateInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rate'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - shipping
+      operationId: delete_shipping_rate
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/shipping-zones:
+    get:
+      tags:
+      - shipping
+      operationId: list_zones
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Zone'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - shipping
+      operationId: create_zone
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ZoneInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zone'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/shipping-zones/{id}:
+    put:
+      tags:
+      - shipping
+      operationId: update_zone
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ZoneInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zone'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - shipping
+      summary: Deletes a zone with its regions and rates.
+      operationId: delete_zone
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/tax-classes:
+    get:
+      tags:
+      - tax
+      operationId: list_tax_classes
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaxClass'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - tax
+      operationId: create_tax_class
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaxClassInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaxClass'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/tax-classes/{id}:
+    put:
+      tags:
+      - tax
+      operationId: update_tax_class
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaxClassInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaxClass'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - tax
+      summary: Deletes a class with its rates; 409 while products or methods use it.
+      operationId: delete_tax_class
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/tax-rates:
+    get:
+      tags:
+      - tax
+      operationId: list_tax_rates
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaxRate'
+      security:
+      - bearer: []
+    post:
+      tags:
+      - tax
+      operationId: create_tax_rate
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaxRateInput'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaxRate'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/admin/tax-rates/{id}:
+    put:
+      tags:
+      - tax
+      operationId: update_tax_rate
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaxRateInput'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaxRate'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - tax
+      operationId: delete_tax_rate
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204': {}
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/carts:
+    post:
+      tags:
+      - cart
+      summary: |-
+        Starts a cart. Guests get a `cart_token`; a signed-in shopper gets their
+        existing active cart, or a new one, tied to their account.
+      operationId: create_cart
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewCart'
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewCart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/carts/current:
+    get:
+      tags:
+      - cart
+      summary: The current cart, re-priced from the live catalog.
+      operationId: get_cart
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/carts/current/coupon:
+    put:
+      tags:
+      - cart
+      summary: Puts a coupon on the cart; 422 if it cannot be used now.
+      operationId: apply_coupon
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+          nullable: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplyCoupon'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+    delete:
+      tags:
+      - cart
+      operationId: remove_coupon
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+          nullable: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/carts/current/items:
+    post:
+      tags:
+      - cart
+      summary: |-
+        Adds a variant with its chosen add-ons. Adding the same combination again
+        increases that line's quantity.
+      operationId: add_item
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddItem'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/carts/current/items/{item_id}:
+    delete:
+      tags:
+      - cart
+      operationId: remove_item
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: item_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+    patch:
+      tags:
+      - cart
+      operationId: update_item
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: item_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateItem'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/carts/current/merge:
+    post:
+      tags:
+      - cart
+      summary: |-
+        After a guest signs in: moves the guest cart's lines (`X-Cart-Token`)
+        into the shopper's cart, adding quantities on identical lines.
+      operationId: merge_cart
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+      security:
+      - bearer: []
+  /v1/sites/{site_id}/carts/current/quote:
+    post:
+      tags:
+      - checkout
+      summary: |-
+        Discounts, shipping options and totals for the current cart and an
+        address. Call again with `shipping_method_code` once one is picked.
+      operationId: quote_cart
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+          nullable: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuoteRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/categories:
+    get:
+      tags:
+      - storefront
+      summary: Active categories, flat; build the tree from `parent_id`.
+      operationId: storefront_categories
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+  /v1/sites/{site_id}/checkout:
+    post:
+      tags:
+      - checkout
+      summary: |-
+        Places an order for the current cart. Send a fresh `Idempotency-Key` per
+        attempt; retrying with the same key returns the same order.
+      operationId: checkout
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-cart-token
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: idempotency-key
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Checkout'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Placed'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/orders:
+    get:
+      tags:
+      - orders
+      summary: |-
+        The signed-in shopper's orders, newest first (including guest orders
+        placed with their email once it is verified).
+      operationId: my_orders
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderSummary'
+      security:
+      - session: []
+  /v1/sites/{site_id}/orders/{order_id}:
+    get:
+      tags:
+      - orders
+      summary: 'One order: the shopper''s own, or a guest''s with the order token from checkout.'
+      operationId: get_order
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-order-token
+        in: header
+        required: false
+        schema:
+          type: string
+          nullable: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/orders/{order_id}/payment:
+    post:
+      tags:
+      - payments
+      summary: |-
+        Starts (or resumes) paying an order. The order becomes paid when the
+        provider confirms the payment.
+      operationId: pay_order
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: x-order-token
+        in: header
+        required: false
+        schema:
+          type: string
+          nullable: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/products:
+    get:
+      tags:
+      - storefront
+      summary: Active products, newest first.
+      operationId: list_products
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: category
+        in: query
+        description: Only products in the category with this slug.
+        required: false
+        schema:
+          type: string
+          nullable: true
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+          format: uuid
+          nullable: true
+      - name: limit
+        in: query
+        description: 1 to 100, default 50.
+        required: false
+        schema:
+          type: integer
+          format: int64
+          nullable: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPage'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+  /v1/sites/{site_id}/products/{slug}:
+    get:
+      tags:
+      - storefront
+      operationId: get_product
+      parameters:
+      - name: site_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+components:
+  schemas:
+    Account:
+      type: object
+      required:
+      - id
+      - email
+      - email_verified
+      properties:
+        email:
+          type: string
+        email_verified:
+          type: boolean
+        id:
+          type: string
+          format: uuid
+    AddItem:
+      type: object
+      required:
+      - variant_id
+      properties:
+        option_value_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Chosen add-on option values.
+        quantity:
+          type: integer
+          format: int32
+        variant_id:
+          type: string
+          format: uuid
+    Address:
+      type: object
+      required:
+      - line1
+      - country_code
+      properties:
+        city:
+          type: string
+          nullable: true
+        company:
+          type: string
+          nullable: true
+        country_code:
+          type: string
+          description: ISO 3166-1 alpha-2, e.g. AU.
+        first_name:
+          type: string
+          nullable: true
+        last_name:
+          type: string
+          nullable: true
+        line1:
+          type: string
+        line2:
+          type: string
+          nullable: true
+        phone:
+          type: string
+          nullable: true
+        postal_code:
+          type: string
+          nullable: true
+        state:
+          type: string
+          description: State or province code, e.g. NSW.
+          nullable: true
+    Adjust:
+      type: object
+      required:
+      - quantity
+      - kind
+      properties:
+        kind:
+          $ref: '#/components/schemas/AdjustmentKind'
+        note:
+          type: string
+          nullable: true
+        quantity:
+          type: integer
+          format: int64
+          description: Signed change to on-hand stock.
+    AdjustmentKind:
+      type: string
+      enum:
+      - receipt
+      - adjustment
+    AppliedDiscount:
+      type: object
+      required:
+      - promotion_id
+      - name
+      - amount
+      - free_shipping
+      properties:
+        amount:
+          type: string
+        coupon_code:
+          type: string
+          description: The coupon that unlocked it; absent for automatic promotions.
+          nullable: true
+        free_shipping:
+          type: boolean
+        name:
+          type: string
+        promotion_id:
+          type: string
+          format: uuid
+    ApplyCoupon:
+      type: object
+      required:
+      - code
+      properties:
+        code:
+          type: string
+    Cancel:
+      type: object
+      properties:
+        reason:
+          type: string
+          nullable: true
+    Cart:
+      type: object
+      required:
+      - id
+      - currency
+      - items
+      - subtotal
+      - item_count
+      - ready
+      properties:
+        coupon_code:
+          type: string
+          description: The coupon entered; the quote shows whether it applies.
+          nullable: true
+        currency:
+          type: string
+        id:
+          type: string
+          format: uuid
+        item_count:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartLine'
+        ready:
+          type: boolean
+          description: True when the cart has items and none has a problem.
+        subtotal:
+          type: string
+          description: Sum of lines without a `problem`.
+    CartLine:
+      type: object
+      required:
+      - id
+      - product_id
+      - product_slug
+      - product_name
+      - variant_id
+      - attributes
+      - options
+      - quantity
+      - unit_price
+      - line_total
+      properties:
+        attributes:
+          type: object
+        id:
+          type: string
+          format: uuid
+        line_total:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChosenOption'
+        problem:
+          type: string
+          description: Why this line cannot be bought as it stands (sold out, removed, ...).
+          nullable: true
+        product_id:
+          type: string
+          format: uuid
+        product_name:
+          type: string
+        product_slug:
+          type: string
+        quantity:
+          type: integer
+          format: int32
+        unit_price:
+          type: string
+        variant_id:
+          type: string
+          format: uuid
+        variant_name:
+          type: string
+          nullable: true
+    Category:
+      type: object
+      required:
+      - id
+      - slug
+      - name
+      - status
+      - sort_order
+      properties:
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        parent_id:
+          type: string
+          format: uuid
+          nullable: true
+        slug:
+          type: string
+        sort_order:
+          type: integer
+          format: int32
+        status:
+          type: string
+    CategoryInput:
+      type: object
+      required:
+      - slug
+      - name
+      properties:
+        description:
+          type: string
+          nullable: true
+        name:
+          type: string
+        parent_id:
+          type: string
+          format: uuid
+          nullable: true
+        slug:
+          type: string
+        sort_order:
+          type: integer
+          format: int32
+        status:
+          $ref: '#/components/schemas/CategoryStatus'
+    CategoryRef:
+      type: object
+      required:
+      - id
+      - slug
+      - name
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        slug:
+          type: string
+    CategoryStatus:
+      type: string
+      enum:
+      - active
+      - inactive
+    Checkout:
+      type: object
+      properties:
+        billing_address:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Address'
+            description: Defaults to the shipping address.
+        email:
+          type: string
+          description: Required for guests; defaults to a shopper's account email.
+          nullable: true
+        shipping_address:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Address'
+        shipping_method_code:
+          type: string
+          description: Required when the site ships; one of the quote's `shipping_options`.
+          nullable: true
+    ChosenOption:
+      type: object
+      required:
+      - group
+      - value_id
+      - label
+      - price_extra
+      properties:
+        group:
+          type: string
+        label:
+          type: string
+        price_extra:
+          type: string
+        value_id:
+          type: string
+          format: uuid
+    ConditionsInput:
+      type: object
+      properties:
+        category_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Only products in these categories (empty = all).
+        min_subtotal:
+          type: string
+          description: The eligible lines must add up to at least this.
+          nullable: true
+        product_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Only these products (empty = all).
+    Coupon:
+      type: object
+      required:
+      - id
+      - code
+      - usage_count
+      - status
+      properties:
+        code:
+          type: string
+        customer_id:
+          type: string
+          format: uuid
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        max_uses:
+          type: integer
+          format: int32
+          nullable: true
+        status:
+          type: string
+        usage_count:
+          type: integer
+          format: int32
+    CouponInput:
+      type: object
+      required:
+      - code
+      properties:
+        code:
+          type: string
+        customer_id:
+          type: string
+          format: uuid
+          description: Only this customer may use it.
+          nullable: true
+        max_uses:
+          type: integer
+          format: int32
+          description: None = unlimited; 1 = single use.
+          nullable: true
+    CouponStatusInput:
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          type: string
+          description: active or disabled
+    CreateProduct:
+      type: object
+      required:
+      - slug
+      - name
+      - price
+      properties:
+        attributes:
+          type: object
+        category_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+        compare_at_price:
+          type: string
+          nullable: true
+        cost_amount:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaInput'
+        name:
+          type: string
+        option_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionGroupInput'
+        price:
+          type: string
+        short_description:
+          type: string
+          nullable: true
+        slug:
+          type: string
+        status:
+          $ref: '#/components/schemas/ProductStatus'
+        tax_class_id:
+          type: string
+          format: uuid
+          nullable: true
+        variant_axes:
+          type: array
+          items:
+            type: string
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/VariantInput'
+          description: 'Omit for a product without variations: one default variant is created.'
+    CreateShipment:
+      type: object
+      properties:
+        carrier:
+          type: string
+          nullable: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShipmentItem'
+          description: Omit to ship everything not yet shipped.
+        service:
+          type: string
+          nullable: true
+        tracking_number:
+          type: string
+          nullable: true
+    CreateUpload:
+      type: object
+      required:
+      - mime_type
+      properties:
+        alt:
+          type: string
+          nullable: true
+        mime_type:
+          type: string
+          description: The file's type, e.g. image/jpeg.
+    Credentials:
+      type: object
+      required:
+      - email
+      - password
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    DiscountInput:
+      oneOf:
+      - type: object
+        description: '`percent`: 10 = 10% off the eligible lines.'
+        required:
+        - percent
+        - type
+        properties:
+          percent:
+            type: string
+          type:
+            type: string
+            enum:
+            - percent_off
+      - type: object
+        required:
+        - amount
+        - type
+        properties:
+          amount:
+            type: string
+          type:
+            type: string
+            enum:
+            - amount_off
+      - type: object
+        required:
+        - type
+        properties:
+          type:
+            type: string
+            enum:
+            - free_shipping
+    DnsRecord:
+      type: object
+      description: A DNS record the merchant publishes to verify their domain.
+      required:
+      - type
+      - name
+      - value
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        value:
+          type: string
+    EmailCode:
+      type: object
+      required:
+      - email
+      - code
+      properties:
+        code:
+          type: string
+        email:
+          type: string
+    EmailInput:
+      type: object
+      required:
+      - email
+      properties:
+        email:
+          type: string
+    MediaInput:
+      type: object
+      required:
+      - media_id
+      properties:
+        media_id:
+          type: string
+          format: uuid
+        role:
+          type: string
+    Method:
+      type: object
+      required:
+      - id
+      - code
+      - name
+      - kind
+      - status
+      properties:
+        carrier:
+          type: string
+          nullable: true
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+        kind:
+          $ref: '#/components/schemas/MethodKind'
+        name:
+          type: string
+        status:
+          type: string
+        tax_class_id:
+          type: string
+          format: uuid
+          description: None = shipping charges are not taxed.
+          nullable: true
+    MethodInput:
+      type: object
+      required:
+      - code
+      - name
+      - kind
+      properties:
+        carrier:
+          type: string
+          nullable: true
+        code:
+          type: string
+        kind:
+          $ref: '#/components/schemas/MethodKind'
+        name:
+          type: string
+        status:
+          type: string
+        tax_class_id:
+          type: string
+          format: uuid
+          nullable: true
+    MethodKind:
+      type: string
+      enum:
+      - delivery
+      - pickup
+    NewCart:
+      type: object
+      required:
+      - cart
+      properties:
+        cart:
+          $ref: '#/components/schemas/Cart'
+        cart_token:
+          type: string
+          description: 'Guests: send as `X-Cart-Token` on every cart request. Shown only once.'
+          nullable: true
+    Onboarding:
+      type: object
+      required:
+      - return_url
+      - refresh_url
+      properties:
+        refresh_url:
+          type: string
+          description: Where the provider sends the merchant if the link expires.
+        return_url:
+          type: string
+          description: Where the provider sends the merchant when onboarding is done.
+    OnboardingLink:
+      type: object
+      required:
+      - url
+      properties:
+        url:
+          type: string
+          description: Send the merchant here; it works once and expires within minutes.
+    OptionGroup:
+      type: object
+      required:
+      - id
+      - code
+      - name
+      - min_select
+      - values
+      properties:
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+        max_select:
+          type: integer
+          format: int32
+          description: None = no limit; 1 = single choice.
+          nullable: true
+        min_select:
+          type: integer
+          format: int32
+          description: 1 or more makes the group required.
+        name:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionValue'
+    OptionGroupInput:
+      type: object
+      required:
+      - code
+      - name
+      - values
+      properties:
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+          nullable: true
+        max_select:
+          type: integer
+          format: int32
+          nullable: true
+        min_select:
+          type: integer
+          format: int32
+        name:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionValueInput'
+    OptionValue:
+      type: object
+      required:
+      - id
+      - code
+      - label
+      - price_extra
+      - is_default
+      properties:
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+        is_default:
+          type: boolean
+        label:
+          type: string
+        price_extra:
+          type: string
+          description: Added to the line price when chosen; may be negative.
+    OptionValueInput:
+      type: object
+      required:
+      - code
+      - label
+      properties:
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+          nullable: true
+        is_default:
+          type: boolean
+        label:
+          type: string
+        price_extra:
+          type: string
+    Order:
+      type: object
+      required:
+      - id
+      - order_number
+      - email
+      - currency
+      - payment_status
+      - fulfilment_status
+      - items
+      - subtotal
+      - discount_total
+      - shipping_total
+      - shipping_tax
+      - tax_total
+      - grand_total
+      - refunded_total
+      - prices_include_tax
+      - shipments
+      properties:
+        billing_address:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Address'
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+        currency:
+          type: string
+        customer_id:
+          type: string
+          format: uuid
+          description: 'Admin only: the customer profile, e.g. to target a coupon.'
+          nullable: true
+        discount_total:
+          type: string
+        email:
+          type: string
+        fulfilment_status:
+          type: string
+        grand_total:
+          type: string
+        history:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatusChange'
+          description: Admin only.
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        order_number:
+          type: integer
+          format: int64
+        payment_status:
+          type: string
+        placed_at:
+          type: string
+          format: date-time
+          nullable: true
+        prices_include_tax:
+          type: boolean
+          description: Prices (and the grand total) include `tax_total`.
+        refunded_total:
+          type: string
+        shipments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Shipment'
+        shipping_address:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Address'
+        shipping_method_code:
+          type: string
+          nullable: true
+        shipping_tax:
+          type: string
+        shipping_total:
+          type: string
+        subtotal:
+          type: string
+        tax_total:
+          type: string
+          description: Line tax plus shipping tax.
+    OrderItem:
+      type: object
+      required:
+      - id
+      - product_name
+      - options
+      - quantity
+      - unit_price
+      - discount_total
+      - tax_total
+      - total
+      - shipped_quantity
+      - refunded_quantity
+      properties:
+        discount_total:
+          type: string
+        id:
+          type: string
+          format: uuid
+        options:
+          type: array
+          items:
+            type: object
+          description: 'Chosen add-ons as bought: group, label, price_extra.'
+        product_id:
+          type: string
+          format: uuid
+          nullable: true
+        product_name:
+          type: string
+        quantity:
+          type: integer
+          format: int32
+        refunded_quantity:
+          type: integer
+          format: int32
+        shipped_quantity:
+          type: integer
+          format: int64
+        sku:
+          type: string
+          nullable: true
+        tax_total:
+          type: string
+        total:
+          type: string
+        unit_price:
+          type: string
+          description: Includes the add-ons.
+        variant_id:
+          type: string
+          format: uuid
+          nullable: true
+        variant_name:
+          type: string
+          nullable: true
+    OrderSummary:
+      type: object
+      required:
+      - id
+      - order_number
+      - email
+      - currency
+      - grand_total
+      - payment_status
+      - fulfilment_status
+      - item_count
+      properties:
+        currency:
+          type: string
+        email:
+          type: string
+        fulfilment_status:
+          type: string
+        grand_total:
+          type: string
+        id:
+          type: string
+          format: uuid
+        item_count:
+          type: integer
+          format: int64
+        order_number:
+          type: integer
+          format: int64
+        payment_status:
+          type: string
+        placed_at:
+          type: string
+          format: date-time
+          nullable: true
+    PasswordReset:
+      type: object
+      required:
+      - email
+      - code
+      - new_password
+      properties:
+        code:
+          type: string
+        email:
+          type: string
+        new_password:
+          type: string
+    Payment:
+      type: object
+      required:
+      - provider
+      - payment_reference
+      - amount
+      - currency
+      - client
+      properties:
+        amount:
+          type: string
+        client:
+          type: object
+          description: |-
+            What the provider's SDK needs to collect the payment (keys, secrets,
+            account), passed through untouched; see the provider's docs.
+        currency:
+          type: string
+        payment_reference:
+          type: string
+          description: The provider's id for this payment.
+        provider:
+          type: string
+          description: The payment provider, which tells the storefront which SDK to use.
+    PaymentAccount:
+      type: object
+      required:
+      - payments_enabled
+      - details_submitted
+      properties:
+        account_id:
+          type: string
+          nullable: true
+        details_submitted:
+          type: boolean
+        payments_enabled:
+          type: boolean
+        provider:
+          type: string
+          nullable: true
+    Placed:
+      type: object
+      required:
+      - order
+      properties:
+        order:
+          $ref: '#/components/schemas/Order'
+        order_token:
+          type: string
+          description: Guests read their order with this as `X-Order-Token`. Shown only once.
+          nullable: true
+    Problem:
+      type: object
+      description: RFC 9457 problem details, the body of every error response.
+      required:
+      - type
+      - title
+      - status
+      properties:
+        detail:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          minimum: 0
+        title:
+          type: string
+        type:
+          type: string
+    Product:
+      type: object
+      required:
+      - id
+      - slug
+      - name
+      - price
+      - status
+      - variant_axes
+      - attributes
+      - variants
+      - option_groups
+      - categories
+      - media
+      - created_at
+      - updated_at
+      properties:
+        attributes:
+          type: object
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryRef'
+        compare_at_price:
+          type: string
+          nullable: true
+        cost_amount:
+          type: string
+          description: Admin only.
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+        description:
+          type: string
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductMedia'
+        name:
+          type: string
+        option_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionGroup'
+        price:
+          type: string
+          description: Base price; a variant's price adds its `price_extra`.
+        short_description:
+          type: string
+          nullable: true
+        slug:
+          type: string
+        status:
+          type: string
+        tax_class_id:
+          type: string
+          format: uuid
+          nullable: true
+        updated_at:
+          type: string
+          format: date-time
+        variant_axes:
+          type: array
+          items:
+            type: string
+          description: Axis names in display order; keys of each variant's `attributes`.
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Variant'
+    ProductMedia:
+      type: object
+      required:
+      - media_id
+      - role
+      properties:
+        alt:
+          type: string
+          nullable: true
+        media_id:
+          type: string
+          format: uuid
+        role:
+          type: string
+        url:
+          type: string
+          description: None when image storage is not configured.
+          nullable: true
+    ProductStatus:
+      type: string
+      enum:
+      - draft
+      - active
+      - archived
+    PromotionInput:
+      type: object
+      description: |-
+        A promotion with no coupon codes applies automatically to every
+        qualifying cart; once it has codes, a shopper must enter one.
+      required:
+      - name
+      - discount
+      properties:
+        conditions:
+          $ref: '#/components/schemas/ConditionsInput'
+        discount:
+          $ref: '#/components/schemas/DiscountInput'
+        ends_at:
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          type: string
+        per_customer_limit:
+          type: integer
+          format: int32
+          description: Redemptions per customer; none = unlimited.
+          nullable: true
+        starts_at:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/PromotionStatus'
+        usage_limit:
+          type: integer
+          format: int64
+          description: Total redemptions allowed; none = unlimited.
+          nullable: true
+    PromotionStatus:
+      type: string
+      enum:
+      - draft
+      - active
+      - paused
+      - expired
+    PromotionView:
+      type: object
+      required:
+      - id
+      - name
+      - discount
+      - conditions
+      - usage_count
+      - status
+      properties:
+        conditions:
+          $ref: '#/components/schemas/ConditionsInput'
+        discount:
+          $ref: '#/components/schemas/DiscountInput'
+        ends_at:
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        per_customer_limit:
+          type: integer
+          format: int32
+          nullable: true
+        starts_at:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+        usage_count:
+          type: integer
+          format: int64
+        usage_limit:
+          type: integer
+          format: int64
+          nullable: true
+    PutSite:
+      type: object
+      required:
+      - name
+      - currency
+      properties:
+        country_code:
+          type: string
+          nullable: true
+        currency:
+          type: string
+        name:
+          type: string
+        prices_include_tax:
+          type: boolean
+        region_code:
+          type: string
+          nullable: true
+        timezone:
+          type: string
+    Quote:
+      type: object
+      required:
+      - currency
+      - subtotal
+      - discounts
+      - discount_total
+      - shipping_options
+      - shipping_total
+      - shipping_tax
+      - tax_total
+      - grand_total
+      - prices_include_tax
+      properties:
+        currency:
+          type: string
+        discount_total:
+          type: string
+        discounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppliedDiscount'
+        grand_total:
+          type: string
+        prices_include_tax:
+          type: boolean
+          description: When true, prices (and the grand total) already include `tax_total`.
+        shipping_method_code:
+          type: string
+          nullable: true
+        shipping_options:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShippingOption'
+          description: |-
+            Ways this cart can ship to the address (list prices); empty when the
+            site does not ship.
+        shipping_tax:
+          type: string
+        shipping_total:
+          type: string
+          description: After any free-shipping promotion.
+        subtotal:
+          type: string
+        tax_total:
+          type: string
+    QuoteRequest:
+      type: object
+      properties:
+        billing_address:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Address'
+        shipping_address:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Address'
+        shipping_method_code:
+          type: string
+          description: One of the returned `shipping_options`.
+          nullable: true
+    Rate:
+      type: object
+      required:
+      - id
+      - method_id
+      - zone_id
+      - min_order_amount
+      - price
+      properties:
+        id:
+          type: string
+          format: uuid
+        max_order_amount:
+          type: string
+          nullable: true
+        method_id:
+          type: string
+          format: uuid
+        min_order_amount:
+          type: string
+        price:
+          type: string
+        zone_id:
+          type: string
+          format: uuid
+    RateInput:
+      type: object
+      description: |-
+        A price tier: orders whose subtotal is at least `min_order_amount` (and
+        below `max_order_amount`) pay `price`; the highest tier met wins.
+      required:
+      - method_id
+      - zone_id
+      - price
+      properties:
+        max_order_amount:
+          type: string
+          nullable: true
+        method_id:
+          type: string
+          format: uuid
+        min_order_amount:
+          type: string
+        price:
+          type: string
+        zone_id:
+          type: string
+          format: uuid
+    RefundInput:
+      type: object
+      required:
+      - amount
+      properties:
+        amount:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/RefundItem'
+          description: Units to put back in stock and mark refunded.
+        reason:
+          type: string
+          nullable: true
+    RefundItem:
+      type: object
+      required:
+      - order_item_id
+      - quantity
+      properties:
+        order_item_id:
+          type: string
+          format: uuid
+        quantity:
+          type: integer
+          format: int32
+    ReplaceOptionGroups:
+      type: object
+      description: |-
+        Replaces every add-on group. Groups and values keep their identity when
+        matched by `id` or `code`.
+      required:
+      - option_groups
+      properties:
+        option_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionGroupInput'
+    ReplaceVariants:
+      type: object
+      description: |-
+        Replaces every variant. Variants matched by `id`, or else by identical
+        `attributes`, keep their identity (and stock); unmatched ones are removed,
+        or deactivated when orders, carts or stock history refer to them.
+      required:
+      - variant_axes
+      - variants
+      properties:
+        variant_axes:
+          type: array
+          items:
+            type: string
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/VariantInput'
+    Sender:
+      type: object
+      required:
+      - domain
+      - from_local
+      - status
+      - dns_records
+      properties:
+        dns_records:
+          type: array
+          items:
+            $ref: '#/components/schemas/DnsRecord'
+          description: Publish these at the domain's DNS host.
+        domain:
+          type: string
+        from_local:
+          type: string
+          description: Emails come from `<from_local>@<domain>`.
+        from_name:
+          type: string
+          nullable: true
+        reply_to:
+          type: string
+          nullable: true
+        status:
+          type: string
+          description: pending until the email provider sees the DNS records; then verified (or failed).
+        verified_at:
+          type: string
+          format: date-time
+          nullable: true
+    SenderInput:
+      type: object
+      required:
+      - domain
+      properties:
+        domain:
+          type: string
+        from_local:
+          type: string
+        from_name:
+          type: string
+          nullable: true
+        reply_to:
+          type: string
+          nullable: true
+    Session:
+      type: object
+      required:
+      - session_token
+      - expires_at
+      - account
+      properties:
+        account:
+          $ref: '#/components/schemas/Account'
+        expires_at:
+          type: string
+          format: date-time
+        session_token:
+          type: string
+          description: 'Send as `Authorization: Bearer <token>` on storefront requests.'
+    Shipment:
+      type: object
+      required:
+      - id
+      - status
+      - items
+      properties:
+        carrier:
+          type: string
+          nullable: true
+        delivered_at:
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShipmentItem'
+        service:
+          type: string
+          nullable: true
+        shipped_at:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+        tracking_number:
+          type: string
+          nullable: true
+    ShipmentItem:
+      type: object
+      required:
+      - order_item_id
+      - quantity
+      properties:
+        order_item_id:
+          type: string
+          format: uuid
+        quantity:
+          type: integer
+          format: int32
+    ShipmentStatus:
+      type: string
+      enum:
+      - in_transit
+      - delivered
+      - failed
+      - returned
+    ShippingOption:
+      type: object
+      description: A way an order can be shipped, with its price.
+      required:
+      - code
+      - name
+      - kind
+      - price
+      properties:
+        carrier:
+          type: string
+          nullable: true
+        code:
+          type: string
+        kind:
+          $ref: '#/components/schemas/MethodKind'
+        name:
+          type: string
+        price:
+          type: string
+    Site:
+      type: object
+      required:
+      - id
+      - name
+      - currency
+      - timezone
+      - prices_include_tax
+      - payments_enabled
+      properties:
+        country_code:
+          type: string
+          description: Where the business is (ISO 3166-1 alpha-2); taxes pickup orders.
+          nullable: true
+        currency:
+          type: string
+          description: ISO 4217; every price on this site is in it.
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        payment_account_id:
+          type: string
+          description: The merchant's account at the payment provider, once connected.
+          nullable: true
+        payments_enabled:
+          type: boolean
+          description: Whether online payments can be taken.
+        prices_include_tax:
+          type: boolean
+          description: Prices already include tax (AU/EU style); tax is extracted, not added.
+        region_code:
+          type: string
+          nullable: true
+        timezone:
+          type: string
+          description: IANA time zone.
+    StatusChange:
+      type: object
+      required:
+      - status_type
+      - to_status
+      - at
+      properties:
+        actor:
+          type: string
+          description: Token subject of who made the change; absent for the system.
+          nullable: true
+        at:
+          type: string
+          format: date-time
+        from_status:
+          type: string
+          nullable: true
+        reason:
+          type: string
+          nullable: true
+        status_type:
+          type: string
+          description: payment or fulfilment
+        to_status:
+          type: string
+    Stock:
+      type: object
+      required:
+      - on_hand
+      - reserved
+      - available
+      properties:
+        available:
+          type: integer
+          format: int64
+        on_hand:
+          type: integer
+          format: int64
+        reserved:
+          type: integer
+          format: int64
+    StockLevel:
+      type: object
+      required:
+      - variant_id
+      - product_id
+      - product_name
+      - on_hand
+      - reserved
+      - available
+      properties:
+        available:
+          type: integer
+          format: int64
+        on_hand:
+          type: integer
+          format: int64
+        product_id:
+          type: string
+          format: uuid
+        product_name:
+          type: string
+        reserved:
+          type: integer
+          format: int64
+        sku:
+          type: string
+          nullable: true
+        variant_id:
+          type: string
+          format: uuid
+        variant_name:
+          type: string
+          nullable: true
+    TaxClass:
+      type: object
+      required:
+      - id
+      - code
+      - name
+      properties:
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+    TaxClassInput:
+      type: object
+      required:
+      - code
+      - name
+      properties:
+        code:
+          type: string
+          description: '`standard` is used for products without a class.'
+        name:
+          type: string
+    TaxRate:
+      type: object
+      required:
+      - id
+      - tax_class_id
+      - rate
+      - priority
+      properties:
+        country_code:
+          type: string
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        priority:
+          type: integer
+          format: int32
+        rate:
+          type: string
+          description: 'Fraction: 0.1 = 10%.'
+        region_code:
+          type: string
+          nullable: true
+        tax_class_id:
+          type: string
+          format: uuid
+        valid_from:
+          type: string
+          format: date-time
+          nullable: true
+        valid_until:
+          type: string
+          format: date-time
+          nullable: true
+    TaxRateInput:
+      type: object
+      required:
+      - tax_class_id
+      - rate
+      properties:
+        country_code:
+          type: string
+          description: None = anywhere.
+          nullable: true
+        priority:
+          type: integer
+          format: int32
+          description: Rates of different priorities in one jurisdiction stack (state + county).
+        rate:
+          type: string
+          description: 'Fraction: 0.1 = 10%.'
+        region_code:
+          type: string
+          description: None = the whole country.
+          nullable: true
+        tax_class_id:
+          type: string
+          format: uuid
+        valid_from:
+          type: string
+          format: date-time
+          nullable: true
+        valid_until:
+          type: string
+          format: date-time
+          nullable: true
+    UpdateItem:
+      type: object
+      required:
+      - quantity
+      properties:
+        quantity:
+          type: integer
+          format: int32
+    UpdateProduct:
+      type: object
+      description: 'PATCH: absent fields are unchanged; `null` clears a nullable field.'
+      properties:
+        attributes:
+          type: object
+          nullable: true
+        category_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Replaces the product's categories.
+          nullable: true
+        compare_at_price:
+          type: string
+          nullable: true
+        cost_amount:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaInput'
+          description: Replaces the product's media.
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        price:
+          type: string
+          nullable: true
+        short_description:
+          type: string
+          nullable: true
+        slug:
+          type: string
+          nullable: true
+        status:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/ProductStatus'
+        tax_class_id:
+          type: string
+          format: uuid
+          nullable: true
+    UpdateShipment:
+      type: object
+      required:
+      - status
+      properties:
+        status:
+          $ref: '#/components/schemas/ShipmentStatus'
+        tracking_number:
+          type: string
+          nullable: true
+    Upload:
+      type: object
+      required:
+      - media_id
+      - upload_url
+      - url
+      properties:
+        media_id:
+          type: string
+          format: uuid
+        upload_url:
+          type: string
+          description: Upload the file here (single use, expires soon).
+        url:
+          type: string
+          description: Where the image is served once uploaded.
+    Variant:
+      type: object
+      required:
+      - id
+      - attributes
+      - price_extra
+      - price
+      - status
+      - available
+      properties:
+        attributes:
+          type: object
+          description: 'Axis values, e.g. {"Size": "L"}.'
+        available:
+          type: boolean
+          description: False when stock is tracked and none is left.
+        barcode:
+          type: string
+          nullable: true
+        dimension_unit:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        id:
+          type: string
+          format: uuid
+        length:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        price:
+          type: string
+          description: Product price plus `price_extra`.
+        price_extra:
+          type: string
+        sku:
+          type: string
+          nullable: true
+        status:
+          type: string
+        stock:
+          nullable: true
+          allOf:
+          - $ref: '#/components/schemas/Stock'
+            description: Admin only; absent when stock is not tracked.
+        weight:
+          type: string
+          nullable: true
+        weight_unit:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+    VariantInput:
+      type: object
+      properties:
+        attributes:
+          type: object
+          description: 'One string value per axis, e.g. {"Size": "L"}.'
+        barcode:
+          type: string
+          nullable: true
+        dimension_unit:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        id:
+          type: string
+          format: uuid
+          nullable: true
+        length:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        price_extra:
+          type: string
+        sku:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/VariantStatus'
+        weight:
+          type: string
+          nullable: true
+        weight_unit:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+    VariantStatus:
+      type: string
+      enum:
+      - active
+      - inactive
+    Zone:
+      type: object
+      required:
+      - id
+      - code
+      - name
+      - regions
+      properties:
+        code:
+          type: string
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZoneRegion'
+    ZoneInput:
+      type: object
+      required:
+      - code
+      - name
+      - regions
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZoneRegion'
+    ZoneRegion:
+      type: object
+      required:
+      - country_code
+      properties:
+        country_code:
+          type: string
+          description: ISO 3166-1 alpha-2.
+        region_code:
+          type: string
+          description: A subdivision code, or "*" for the whole country.
+    OrderSummaryPage:
+      type: object
+      required:
+      - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderSummary'
+        next_cursor:
+          type: string
+          format: uuid
+          description: Pass as `cursor` to fetch the next page; absent on the last page.
+          nullable: true
+    ProductPage:
+      type: object
+      required:
+      - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        next_cursor:
+          type: string
+          format: uuid
+          description: Pass as `cursor` to fetch the next page; absent on the last page.
+          nullable: true
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+      description: A partner service's key. Admin calls also name who is acting in the Aether-Actor header, e.g. provider:<user id>.
+    session:
+      type: http
+      scheme: bearer
+      description: Shopper session token from /account/sessions

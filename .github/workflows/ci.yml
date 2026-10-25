@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  AETHER_TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+      - name: Bootstrap database roles
+        run: psql "$AETHER_TEST_DATABASE_URL" -v ON_ERROR_STOP=1 -v app_password=ci -v worker_password=ci -f db/bootstrap.sql
+      - run: test -z "$(gofmt -l .)"
+      - run: go vet ./...
+      - name: Generated code is up to date
+        run: go generate ./... && git diff --exit-code
+      - run: go test -race ./...

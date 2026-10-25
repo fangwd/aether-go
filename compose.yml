@@ -1,0 +1,75 @@
+# aether, its worker and database, Mailpit and stripe-mock, for local
+# end-to-end runs. Admin calls use the dev partner key.
+#
+#   docker-compose up -d --build && scripts/smoke.sh
+name: aether
+
+x-aether-env: &aether-env
+  AETHER_LOG_FORMAT: json
+  AETHER_EMAIL_TRANSPORT: smtp
+  AETHER_SMTP_HOST: mailpit
+  AETHER_SMTP_PORT: "1025"
+  AETHER_STRIPE_API_URL: http://stripe-mock:12111
+  AETHER_STRIPE_SECRET_KEY: sk_test_mock
+  AETHER_STRIPE_PUBLISHABLE_KEY: pk_test_mock
+  AETHER_STRIPE_WEBHOOK_SECRET: whsec_mock
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports: ["5434:5432"]
+    volumes:
+      - ./db/bootstrap.sql:/bootstrap.sql:ro
+      - ./deploy/initdb.sh:/docker-entrypoint-initdb.d/initdb.sh:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 2s
+      retries: 30
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports: ["8025:8025", "1025:1025"]
+
+  # Stripe's official API mock: answers every call aether makes, statelessly.
+  # It sends no webhooks; scripts/smoke.sh posts signed ones instead.
+  stripe-mock:
+    image: stripe/stripe-mock:latest
+    ports: ["12111:12111"]
+
+  aether-migrate:
+    build: .
+    image: aether:local
+    command: ["migrate"]
+    environment:
+      AETHER_LOG_FORMAT: json
+      AETHER_MIGRATE_DATABASE_URL: postgresql://postgres:postgres@postgres/aether
+    depends_on:
+      postgres: { condition: service_healthy }
+
+  aether:
+    image: aether:local
+    environment:
+      <<: *aether-env
+      AETHER_LISTEN: 0.0.0.0:2384
+      AETHER_DATABASE_URL: postgresql://aether_app:aether_app@postgres/aether
+      AETHER_PARTNER_KEYS: dev-partner-key-not-for-production
+      # Product images: set these in .env to upload through Cloudflare Images.
+      AETHER_CLOUDFLARE_IMAGES_ACCOUNT_ID: ${AETHER_CLOUDFLARE_IMAGES_ACCOUNT_ID:-}
+      AETHER_CLOUDFLARE_IMAGES_API_TOKEN: ${AETHER_CLOUDFLARE_IMAGES_API_TOKEN:-}
+      AETHER_CLOUDFLARE_IMAGES_DELIVERY_URL: ${AETHER_CLOUDFLARE_IMAGES_DELIVERY_URL:-}
+      AETHER_CLOUDFLARE_IMAGES_VARIANT: ${AETHER_CLOUDFLARE_IMAGES_VARIANT:-}
+    ports: ["2384:2384"]
+    depends_on:
+      aether-migrate: { condition: service_completed_successfully }
+
+  aether-worker:
+    image: aether:local
+    command: ["worker"]
+    environment:
+      <<: *aether-env
+      AETHER_WORKER_DATABASE_URL: postgresql://aether_worker:aether_worker@postgres/aether
+      AETHER_EMAIL_FALLBACK_FROM: shops@provider.example
+    depends_on:
+      aether-migrate: { condition: service_completed_successfully }
