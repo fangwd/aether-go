@@ -1,0 +1,691 @@
+- generic [ref=f59e7]:
+  - generic [ref=f59e8]:
+    - generic [ref=f59e10]:
+      - button "Components" [ref=f59e11] [cursor=pointer]
+      - button "Test Page" [ref=f59e12] [cursor=pointer]
+      - button "Metadata" [ref=f59e13] [cursor=pointer]
+    - button "Open command palette" [ref=f59e18]:
+      - generic [aria-hidden] [ref=f59e19]: ⌕
+      - generic [ref=f59e20]: Search or run a command…
+      - generic [ref=f59e21]: ⌘K
+    - generic [ref=f59e22]:
+      - button "MCP offline" [ref=f59e24] [cursor=pointer]
+      - button "☾" [ref=f59e28] [cursor=pointer]
+      - button "⚑" [ref=f59e29] [cursor=pointer]
+      - button "⌥ shop-trial" [ref=f59e18238] [cursor=pointer]:
+        - generic [ref=f59e32]: ⌥
+        - text: shop-trial
+      - button "Admin Dashboard" [ref=f59e33] [cursor=pointer]
+  - generic [ref=f59e5328]:
+    - generic [ref=f59e5330]:
+      - generic [ref=f59e5331]: Metadata
+      - generic [ref=f59e5332]: Central management for categories, components, slots, and properties across the library.
+    - generic [ref=f59e5333]:
+      - button "Components 881" [ref=f59e5334] [cursor=pointer]:
+        - text: Components
+        - generic [ref=f59e5335]: "881"
+      - button "Categories 26" [ref=f59e5336] [cursor=pointer]:
+        - text: Categories
+        - generic [ref=f59e5337]: "26"
+      - button "Collections 7" [ref=f59e5338] [cursor=pointer]:
+        - text: Collections
+        - generic [ref=f59e5339]: "7"
+      - button "Slots 31" [ref=f59e5340] [cursor=pointer]:
+        - text: Slots
+        - generic [ref=f59e5341]: "31"
+      - button "Instances 4299" [ref=f59e5342] [cursor=pointer]:
+        - text: Instances
+        - generic [ref=f59e5343]: "4299"
+      - button "Registry 389" [ref=f59e5344] [cursor=pointer]:
+        - text: Registry
+        - generic [ref=f59e5345]: "389"
+      - button "Search" [ref=f59e5346] [cursor=pointer]
+    - generic [ref=f59e17591]:
+      - generic [ref=f59e17592]: A type is the components it is made of and the props you mark as content. Publish derives each field's type and label from the prop.
+      - button "+ New collection type" [ref=f59e17593] [cursor=pointer]
+    - table [ref=f59e17595]:
+      - rowgroup [ref=f59e17596]:
+        - row [ref=f59e17597]:
+          - columnheader "Id" [ref=f59e17598]
+          - columnheader "Label" [ref=f59e17599]
+          - columnheader "Components" [ref=f59e17600]
+          - columnheader "Lists (inferred)" [ref=f59e17601]
+          - columnheader "Template page" [ref=f59e17602]
+          - columnheader "Fields" [ref=f59e17603]
+          - columnheader "Use cases" [ref=f59e17604]
+          - columnheader "Hidden" [ref=f59e17605]
+          - columnheader [ref=f59e17606]
+      - rowgroup [ref=f59e17607]:
+        - row [ref=f59e17608]:
+          - cell [ref=f59e17609]:
+            - code [ref=f59e17610]: content
+          - cell "Content" [ref=f59e17611]
+          - cell [ref=f59e17612]:
+            - link "Content Feed Item • Card • Medium • Vertical" [ref=f59e17614] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-card-medium-vertical"
+            - link "Content Feed Item • Card • Large • Vertical" [ref=f59e17616] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-card-large-vertical"
+            - link "Content Feed Item • Card • XLarge • Horizontal" [ref=f59e17618] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-card-xlarge-horizontal"
+            - link "Content Feed Item • Card • XLarge • Vertical" [ref=f59e17620] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-card-xlarge-vertical"
+            - link "Content Feed Item • Card • Large • Horizontal" [ref=f59e17622] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-card-large-horizontal"
+            - link "Content Feed Item • Large • Vertical" [ref=f59e17624] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-large-vertical"
+            - link "Content Feed Item • Medium • Vertical" [ref=f59e17626] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-medium-vertical"
+            - link "Content Feed Item • XLarge • Vertical" [ref=f59e17628] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-xlarge-vertical"
+            - link "Content Feed Item • XLarge • Horizontal" [ref=f59e17630] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-xlarge-horizontal"
+            - link "Content Feed Item • Large • Horizontal" [ref=f59e17632] [cursor=pointer]:
+              - /url: "#/components?id=ct-content-feed-item-large-horizontal"
+            - link "Content Body Section • Article • Centered" [ref=f59e17634] [cursor=pointer]:
+              - /url: "#/components?id=sc-content-body-article-centered"
+            - link "Content Body Section • Article • Sidebar" [ref=f59e17636] [cursor=pointer]:
+              - /url: "#/components?id=sc-content-body-article"
+            - link "Page Header Section • Post • Horizontal" [ref=f59e17638] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-post-horizontal"
+            - link "Page Header Section • Post • Center • Vertical" [ref=f59e17640] [cursor=pointer]:
+              - /url: "#/components?id=55aa6bb4-5651-47bb-b41d-65b195bffd5e"
+            - link "Page Header Section • Post • Left • Vertical" [ref=f59e17642] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-post-vertical"
+          - cell "20 lists in 3 sections Shown through Content Authors, Content Categories, Content Tags" [ref=f59e17643]:
+            - generic [ref=f59e17644]: 20 lists in 3 sections
+            - group [ref=f59e17645]:
+              - generic "✓ 20 set up to take a collection" [ref=f59e17646]
+            - generic [ref=f59e17647]: Shown through Content Authors, Content Categories, Content Tags
+          - cell [ref=f59e17648]:
+            - link "Page Header Section • Post • Left • Vertical" [ref=f59e17650] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-post-vertical"
+            - link "Content Body Section • Article • Centered" [ref=f59e17652] [cursor=pointer]:
+              - /url: "#/components?id=sc-content-body-article-centered"
+          - cell "contentItemTitle · title itemLink contentItemFeaturedImage contentItemExcerpt contentItemPublishedDate contentItemReadTime contentItemBody contentAuthors → content-authors contentCategories → content-categories contentTags → content-tags" [ref=f59e17653]:
+            - generic [ref=f59e17654]:
+              - generic "string" [ref=f59e17655]: contentItemTitle · title
+              - generic "link" [ref=f59e17656]: itemLink
+              - generic "image" [ref=f59e17657]: contentItemFeaturedImage
+              - generic "richText" [ref=f59e17658]: contentItemExcerpt
+              - generic "date" [ref=f59e17659]: contentItemPublishedDate
+              - generic "string" [ref=f59e17660]: contentItemReadTime
+              - generic "richContent" [ref=f59e17661]: contentItemBody
+              - generic "references content-authors" [ref=f59e17662]: contentAuthors → content-authors
+              - generic "references content-categories" [ref=f59e17663]: contentCategories → content-categories
+              - generic "references content-tags" [ref=f59e17664]: contentTags → content-tags
+          - cell "Blog Regular company posts, listed newest first with author and category. Articles Long-form editorial pieces that stand on their own and are browsed by topic. Guides How-to and educational pieces readers revisit, grouped by category. News & Updates Announcements and company news, dated and read in order. Resources A library of reference or downloadable content, filtered by tag. Changelog Dated release notes, read on the Document body with no sidebar. Podcast Episodes Episode pages with show notes, listed by release date. + Add use case" [ref=f59e17665]:
+            - generic [ref=f59e17666]:
+              - generic "Regular company posts, listed newest first with author and category." [ref=f59e17667]: Blog
+              - generic "Long-form editorial pieces that stand on their own and are browsed by topic." [ref=f59e17670]: Articles
+              - generic "How-to and educational pieces readers revisit, grouped by category." [ref=f59e17673]: Guides
+              - generic "Announcements and company news, dated and read in order." [ref=f59e17676]: News & Updates
+              - generic "A library of reference or downloadable content, filtered by tag." [ref=f59e17679]: Resources
+              - generic "Dated release notes, read on the Document body with no sidebar." [ref=f59e17682]: Changelog
+              - generic "Episode pages with show notes, listed by release date." [ref=f59e17685]: Podcast Episodes
+              - button "+ Add use case" [ref=f59e17688] [cursor=pointer]
+          - cell [ref=f59e17689]:
+            - checkbox "Hide from catalog" [ref=f59e17690]
+          - cell [ref=f59e17691]:
+            - generic [ref=f59e17692]:
+              - button "Edit" [ref=f59e17693] [cursor=pointer]
+              - button "Delete" [ref=f59e17694] [cursor=pointer]
+        - row [ref=f59e17695]:
+          - cell [ref=f59e17696]:
+            - code [ref=f59e17697]: content-authors
+          - cell "Content Authors" [ref=f59e17698]
+          - cell [ref=f59e17699]:
+            - link "Author Profile" [ref=f59e17701] [cursor=pointer]:
+              - /url: "#/components?id=ct-author-profile"
+          - cell "Shown through Content" [ref=f59e17702]
+          - cell "— (listing only)" [ref=f59e17704]
+          - cell "authorName · title authorRole avatarImageSource content → content" [ref=f59e17705]:
+            - generic [ref=f59e17706]:
+              - generic "string" [ref=f59e17707]: authorName · title
+              - generic "richText" [ref=f59e17708]: authorRole
+              - generic "image" [ref=f59e17709]: avatarImageSource
+              - generic "references content" [ref=f59e17710]: content → content
+          - cell [ref=f59e17711]:
+            - button "+ Add use case" [ref=f59e17713] [cursor=pointer]
+          - cell [ref=f59e17714]:
+            - checkbox "Hide from catalog" [ref=f59e17715]
+          - cell [ref=f59e17716]:
+            - generic [ref=f59e17717]:
+              - button "Edit" [ref=f59e17718] [cursor=pointer]
+              - button "Delete" [ref=f59e17719] [cursor=pointer]
+        - row [ref=f59e17720]:
+          - cell [ref=f59e17721]:
+            - code [ref=f59e17722]: content-categories
+          - cell "Content Categories" [ref=f59e17723]
+          - cell [ref=f59e17724]:
+            - link "Tag" [ref=f59e17726] [cursor=pointer]:
+              - /url: "#/components?id=el-chip"
+          - cell "1 list in 6 sections · 1 misconfigured ⚠ Tag List • Static · no collection prop Shown through Content" [ref=f59e17727]:
+            - generic [ref=f59e17728]: 1 list in 6 sections · 1 misconfigured
+            - generic "Tag List • Static repeats Tag but has no collection prop, so no collection can be connected to it" [ref=f59e17729]:
+              - generic [ref=f59e17730]: ⚠
+              - generic [ref=f59e17731]:
+                - link "Tag List • Static" [ref=f59e17732] [cursor=pointer]:
+                  - /url: "#/components?id=ct-tag-list-static"
+                - generic [ref=f59e17733]: · no collection prop
+            - generic [ref=f59e17734]: Shown through Content
+          - cell "— (listing only)" [ref=f59e17735]
+          - cell "tagText · title iconGlyph content → content" [ref=f59e17736]:
+            - generic [ref=f59e17737]:
+              - generic "string" [ref=f59e17738]: tagText · title
+              - generic "iconName" [ref=f59e17739]: iconGlyph
+              - generic "references content" [ref=f59e17740]: content → content
+          - cell [ref=f59e17741]:
+            - button "+ Add use case" [ref=f59e17743] [cursor=pointer]
+          - cell [ref=f59e17744]:
+            - checkbox "Hide from catalog" [ref=f59e17745]
+          - cell [ref=f59e17746]:
+            - generic [ref=f59e17747]:
+              - button "Edit" [ref=f59e17748] [cursor=pointer]
+              - button "Delete" [ref=f59e17749] [cursor=pointer]
+        - row [ref=f59e17750]:
+          - cell [ref=f59e17751]:
+            - code [ref=f59e17752]: content-tags
+          - cell "Content Tags" [ref=f59e17753]
+          - cell [ref=f59e17754]:
+            - link "Tag" [ref=f59e17756] [cursor=pointer]:
+              - /url: "#/components?id=el-chip"
+          - cell "1 list in 6 sections · 1 misconfigured ⚠ Tag List • Static · no collection prop Shown through Content" [ref=f59e17757]:
+            - generic [ref=f59e17758]: 1 list in 6 sections · 1 misconfigured
+            - generic "Tag List • Static repeats Tag but has no collection prop, so no collection can be connected to it" [ref=f59e17759]:
+              - generic [ref=f59e17760]: ⚠
+              - generic [ref=f59e17761]:
+                - link "Tag List • Static" [ref=f59e17762] [cursor=pointer]:
+                  - /url: "#/components?id=ct-tag-list-static"
+                - generic [ref=f59e17763]: · no collection prop
+            - generic [ref=f59e17764]: Shown through Content
+          - cell "— (listing only)" [ref=f59e17765]
+          - cell "tagText · title iconGlyph content → content" [ref=f59e17766]:
+            - generic [ref=f59e17767]:
+              - generic "string" [ref=f59e17768]: tagText · title
+              - generic "iconName" [ref=f59e17769]: iconGlyph
+              - generic "references content" [ref=f59e17770]: content → content
+          - cell [ref=f59e17771]:
+            - button "+ Add use case" [ref=f59e17773] [cursor=pointer]
+          - cell [ref=f59e17774]:
+            - checkbox "Hide from catalog" [ref=f59e17775]
+          - cell [ref=f59e17776]:
+            - generic [ref=f59e17777]:
+              - button "Edit" [ref=f59e17778] [cursor=pointer]
+              - button "Delete" [ref=f59e17779] [cursor=pointer]
+        - row [ref=f59e17780]:
+          - cell [ref=f59e17781]:
+            - code [ref=f59e17782]: projects
+          - cell "Projects" [ref=f59e17783]
+          - cell [ref=f59e17784]:
+            - link "Project Item • Medium" [ref=f59e17786] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-medium"
+            - link "Project Item • Large" [ref=f59e17788] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-large"
+            - link "Project Item • XLarge • Vertical" [ref=f59e17790] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-xlarge-vertical"
+            - link "Project Item • XLarge • Horizontal" [ref=f59e17792] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-xlarge-horizontal"
+            - link "Project Item • Card • Medium" [ref=f59e17794] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-card-medium"
+            - link "Project Item • Card • Large" [ref=f59e17796] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-card-large"
+            - link "Project Item • Card • XLarge • Vertical" [ref=f59e17798] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-card-xlarge-vertical"
+            - link "Project Item • Card • XLarge • Horizontal" [ref=f59e17800] [cursor=pointer]:
+              - /url: "#/components?id=ct-project-item-card-xlarge-horizontal"
+            - link "Page Header Section • Project • Left" [ref=f59e17802] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-project-left"
+            - link "Page Header Section • Project • Center" [ref=f59e17804] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-project-center"
+            - link "Page Header Section • Project Backdrop • Left" [ref=f59e17806] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-project-backdrop-left"
+            - link "Page Header Section • Project Backdrop • Center" [ref=f59e17808] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-project-backdrop-center"
+          - cell "26 lists in 3 sections · 4 misconfigured ⚠ [archived] Project List • Card • Slider • 2 Column — Horizontal Section · no collection prop ⚠ [archived] Project List • Slider • 2 Column — Horizontal Section · no collection prop ⚠ [archived] Project List • Card • Grid • 2 Column — Horizontal Section · no collection prop ⚠ [archived] Project List • Grid • 2 Column — Horizontal Section · no collection prop Shown through Project Tags" [ref=f59e17809]:
+            - generic [ref=f59e17810]: 26 lists in 3 sections · 4 misconfigured
+            - generic "[archived] Project List • Card • Slider • 2 Column — Horizontal Section repeats Project Item • Card • Medium but has no collection prop, so no collection can be connected to it" [ref=f59e17811]:
+              - generic [ref=f59e17812]: ⚠
+              - generic [ref=f59e17813]:
+                - link "[archived] Project List • Card • Slider • 2 Column — Horizontal Section" [ref=f59e17814] [cursor=pointer]:
+                  - /url: "#/components?id=ct-project-list-card-slider-horizontal-2-column"
+                - generic [ref=f59e17815]: · no collection prop
+            - generic "[archived] Project List • Slider • 2 Column — Horizontal Section repeats Project Item • Medium but has no collection prop, so no collection can be connected to it" [ref=f59e17816]:
+              - generic [ref=f59e17817]: ⚠
+              - generic [ref=f59e17818]:
+                - link "[archived] Project List • Slider • 2 Column — Horizontal Section" [ref=f59e17819] [cursor=pointer]:
+                  - /url: "#/components?id=ct-project-list-slider-horizontal-2-column"
+                - generic [ref=f59e17820]: · no collection prop
+            - generic "[archived] Project List • Card • Grid • 2 Column — Horizontal Section repeats Project Item • Card • Medium but has no collection prop, so no collection can be connected to it" [ref=f59e17821]:
+              - generic [ref=f59e17822]: ⚠
+              - generic [ref=f59e17823]:
+                - link "[archived] Project List • Card • Grid • 2 Column — Horizontal Section" [ref=f59e17824] [cursor=pointer]:
+                  - /url: "#/components?id=ct-project-list-card-grid-horizontal-2-column"
+                - generic [ref=f59e17825]: · no collection prop
+            - generic "[archived] Project List • Grid • 2 Column — Horizontal Section repeats Project Item • Medium but has no collection prop, so no collection can be connected to it" [ref=f59e17826]:
+              - generic [ref=f59e17827]: ⚠
+              - generic [ref=f59e17828]:
+                - link "[archived] Project List • Grid • 2 Column — Horizontal Section" [ref=f59e17829] [cursor=pointer]:
+                  - /url: "#/components?id=ct-project-list-grid-horizontal-2-column"
+                - generic [ref=f59e17830]: · no collection prop
+            - group [ref=f59e17831]:
+              - generic "✓ 22 set up to take a collection" [ref=f59e17832]
+            - generic [ref=f59e17833]: Shown through Project Tags
+          - cell [ref=f59e17834]:
+            - link "Page Header Section • Project • Left" [ref=f59e17836] [cursor=pointer]:
+              - /url: "#/components?id=sc-page-header-project-left"
+            - link "Content Body Section • Rich Content" [ref=f59e17838] [cursor=pointer]:
+              - /url: "#/components?id=sc-content-body-document"
+          - cell "projectName · title itemLink projectFeaturedImage projectFeaturedVideo projectDescription richContent projectDate projectClient projectExternalLink projectTags → project-tags" [ref=f59e17839]:
+            - generic [ref=f59e17840]:
+              - generic "string" [ref=f59e17841]: projectName · title
+              - generic "link" [ref=f59e17842]: itemLink
+              - generic "image" [ref=f59e17843]: projectFeaturedImage
+              - generic "video" [ref=f59e17844]: projectFeaturedVideo
+              - generic "richText" [ref=f59e17845]: projectDescription
+              - generic "richContent" [ref=f59e17846]
+              - generic "date" [ref=f59e17847]: projectDate
+              - generic "string" [ref=f59e17848]: projectClient
+              - generic "link" [ref=f59e17849]: projectExternalLink
+              - generic "references project-tags" [ref=f59e17850]: projectTags → project-tags
+          - cell "Portfolio A curated set of the provider's best work, each piece on its own page. Client Work Projects delivered for named clients, with the client, date and role as key facts. Completed Builds Renovations, installations and builds, led by photographs of the finished work. Property Listings Properties represented or sold, each with its media, location and details. Student Projects Work produced by learners during a programme, as proof of what they can build. + Add use case" [ref=f59e17851]:
+            - generic [ref=f59e17852]:
+              - generic "A curated set of the provider's best work, each piece on its own page." [ref=f59e17853]: Portfolio
+              - generic "Projects delivered for named clients, with the client, date and role as key facts." [ref=f59e17856]: Client Work
+              - generic "Renovations, installations and builds, led by photographs of the finished work." [ref=f59e17859]: Completed Builds
+              - generic "Properties represented or sold, each with its media, location and details." [ref=f59e17862]: Property Listings
+              - generic "Work produced by learners during a programme, as proof of what they can build." [ref=f59e17865]: Student Projects
+              - button "+ Add use case" [ref=f59e17868] [cursor=pointer]
+          - cell [ref=f59e17869]:
+            - checkbox "Hide from catalog" [ref=f59e17870]
+          - cell [ref=f59e17871]:
+            - generic [ref=f59e17872]:
+              - button "Edit" [ref=f59e17873] [cursor=pointer]
+              - button "Delete" [ref=f59e17874] [cursor=pointer]
+        - row [ref=f59e17875]:
+          - cell [ref=f59e17876]:
+            - code [ref=f59e17877]: project-tags
+          - cell "Project Tags" [ref=f59e17878]
+          - cell [ref=f59e17879]:
+            - link "Tag" [ref=f59e17881] [cursor=pointer]:
+              - /url: "#/components?id=el-chip"
+          - cell "1 list in 6 sections · 1 misconfigured ⚠ Tag List • Static · no collection prop Shown through Projects" [ref=f59e17882]:
+            - generic [ref=f59e17883]: 1 list in 6 sections · 1 misconfigured
+            - generic "Tag List • Static repeats Tag but has no collection prop, so no collection can be connected to it" [ref=f59e17884]:
+              - generic [ref=f59e17885]: ⚠
+              - generic [ref=f59e17886]:
+                - link "Tag List • Static" [ref=f59e17887] [cursor=pointer]:
+                  - /url: "#/components?id=ct-tag-list-static"
+                - generic [ref=f59e17888]: · no collection prop
+            - generic [ref=f59e17889]: Shown through Projects
+          - cell "— (listing only)" [ref=f59e17890]
+          - cell "tagText · title iconGlyph projects → projects" [ref=f59e17891]:
+            - generic [ref=f59e17892]:
+              - generic "string" [ref=f59e17893]: tagText · title
+              - generic "iconName" [ref=f59e17894]: iconGlyph
+              - generic "references projects" [ref=f59e17895]: projects → projects
+          - cell [ref=f59e17896]:
+            - button "+ Add use case" [ref=f59e17898] [cursor=pointer]
+          - cell [ref=f59e17899]:
+            - checkbox "Hide from catalog" [ref=f59e17900]
+          - cell [ref=f59e17901]:
+            - generic [ref=f59e17902]:
+              - button "Edit" [ref=f59e17903] [cursor=pointer]
+              - button "Delete" [ref=f59e17904] [cursor=pointer]
+        - row [ref=f59e17905]:
+          - cell [ref=f59e17906]:
+            - code [ref=f59e17907]: team
+          - cell "Team" [ref=f59e17908]
+          - cell [ref=f59e17909]:
+            - link "Team Item • Medium" [ref=f59e17911] [cursor=pointer]:
+              - /url: "#/components?id=62e598f5-5644-4362-8223-64b44d8a28db"
+            - link "Team Item • Large" [ref=f59e17913] [cursor=pointer]:
+              - /url: "#/components?id=e4fb7ada-1020-4846-8b0b-d6227c417f01"
+            - link "Team Item • Card • Medium" [ref=f59e17915] [cursor=pointer]:
+              - /url: "#/components?id=c63038b5-b704-4822-a9b8-df78b36b8132"
+            - link "Team Item • Card • Large" [ref=f59e17917] [cursor=pointer]:
+              - /url: "#/components?id=843519b6-592a-4fd5-b211-f1e52bd051ab"
+          - cell "20 lists in 3 sections" [ref=f59e17918]:
+            - group [ref=f59e17920]:
+              - generic "✓ 20 set up to take a collection" [ref=f59e17921]
+          - cell "— (listing only)" [ref=f59e17922]
+          - cell "teamMemberName · title teamMemberPhoto teamMemberRole teamMemberBio" [ref=f59e17923]:
+            - generic [ref=f59e17924]:
+              - generic "string" [ref=f59e17925]: teamMemberName · title
+              - generic "image" [ref=f59e17926]: teamMemberPhoto
+              - generic "string" [ref=f59e17927]: teamMemberRole
+              - generic "richText" [ref=f59e17928]: teamMemberBio
+          - cell "Leadership The founders and senior people, each with a photo, role and short bio. Whole Team Everyone in the business, shown as a grid of photos, names and roles. Practitioners The clinicians, lawyers, coaches or trainers clients choose between, with credentials in the bio. Board & Advisors Board members, advisors and investors who stand behind the business. Volunteers The volunteers and committee members who run a club, charity or community group. + Add use case" [ref=f59e17929]:
+            - generic [ref=f59e17930]:
+              - generic "The founders and senior people, each with a photo, role and short bio." [ref=f59e17931]: Leadership
+              - generic "Everyone in the business, shown as a grid of photos, names and roles." [ref=f59e17934]: Whole Team
+              - generic "The clinicians, lawyers, coaches or trainers clients choose between, with credentials in the bio." [ref=f59e17937]: Practitioners
+              - generic "Board members, advisors and investors who stand behind the business." [ref=f59e17940]: Board & Advisors
+              - generic "The volunteers and committee members who run a club, charity or community group." [ref=f59e17943]: Volunteers
+              - button "+ Add use case" [ref=f59e17946] [cursor=pointer]
+          - cell [ref=f59e17947]:
+            - checkbox "Hide from catalog" [ref=f59e17948]
+          - cell [ref=f59e17949]:
+            - generic [ref=f59e17950]:
+              - button "Edit" [active] [ref=f59e17951] [cursor=pointer]
+              - button "Delete" [ref=f59e17952] [cursor=pointer]
+    - generic [ref=f59e18240]:
+      - generic [ref=f59e18241]: Edit “team”
+      - generic [ref=f59e18242]:
+        - generic [ref=f59e18243]:
+          - generic [ref=f59e18244]: Id (slug)
+          - textbox "auto-derived from label if blank" [disabled] [ref=f59e18245]: team
+        - generic [ref=f59e18246]:
+          - generic [ref=f59e18247]: Label
+          - textbox [ref=f59e18248]: Team
+        - generic [ref=f59e18249]:
+          - generic [ref=f59e18250]: Use cases — when to reach for this type
+          - generic [ref=f59e18251]:
+            - generic [ref=f59e18252]:
+              - textbox "Use case 1 name" [ref=f59e18253]:
+                - /placeholder: Name
+                - text: Leadership
+              - textbox "Use case 1 description" [ref=f59e18254]:
+                - /placeholder: Description
+                - text: The founders and senior people, each with a photo, role and short bio.
+              - button "Remove" [ref=f59e18255] [cursor=pointer]
+            - generic [ref=f59e18256]:
+              - textbox "Use case 2 name" [ref=f59e18257]:
+                - /placeholder: Name
+                - text: Whole Team
+              - textbox "Use case 2 description" [ref=f59e18258]:
+                - /placeholder: Description
+                - text: Everyone in the business, shown as a grid of photos, names and roles.
+              - button "Remove" [ref=f59e18259] [cursor=pointer]
+            - generic [ref=f59e18260]:
+              - textbox "Use case 3 name" [ref=f59e18261]:
+                - /placeholder: Name
+                - text: Practitioners
+              - textbox "Use case 3 description" [ref=f59e18262]:
+                - /placeholder: Description
+                - text: The clinicians, lawyers, coaches or trainers clients choose between, with credentials in the bio.
+              - button "Remove" [ref=f59e18263] [cursor=pointer]
+            - generic [ref=f59e18264]:
+              - textbox "Use case 4 name" [ref=f59e18265]:
+                - /placeholder: Name
+                - text: Board & Advisors
+              - textbox "Use case 4 description" [ref=f59e18266]:
+                - /placeholder: Description
+                - text: Board members, advisors and investors who stand behind the business.
+              - button "Remove" [ref=f59e18267] [cursor=pointer]
+            - generic [ref=f59e18268]:
+              - textbox "Use case 5 name" [ref=f59e18269]:
+                - /placeholder: Name
+                - text: Volunteers
+              - textbox "Use case 5 description" [ref=f59e18270]:
+                - /placeholder: Description
+                - text: The volunteers and committee members who run a club, charity or community group.
+              - button "Remove" [ref=f59e18271] [cursor=pointer]
+            - button "+ Add use case" [ref=f59e18273] [cursor=pointer]
+        - generic [ref=f59e18274]:
+          - generic [ref=f59e18275]: Components — an item renders as any of these, in a list or through a reference. No list has to repeat them.
+          - generic [ref=f59e18276]:
+            - generic [ref=f59e18277]:
+              - generic [ref=f59e18279]:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - heading "Full name" [level=4]
+                            - generic: Job title
+                          - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+              - generic "62e598f5-5644-4362-8223-64b44d8a28db" [ref=f59e18280]: Team Item • Medium
+              - button "Remove" [ref=f59e18282] [cursor=pointer]: ✕
+            - generic [ref=f59e18283]:
+              - generic [ref=f59e18285]:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - heading "Full name" [level=3]
+                              - generic: Job title
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+              - generic "e4fb7ada-1020-4846-8b0b-d6227c417f01" [ref=f59e18286]: Team Item • Large
+              - button "Remove" [ref=f59e18288] [cursor=pointer]: ✕
+            - generic [ref=f59e18289]:
+              - generic "c63038b5-b704-4822-a9b8-df78b36b8132" [ref=f59e18293]: Team Item • Card • Medium
+              - button "Remove" [ref=f59e18295] [cursor=pointer]: ✕
+            - generic [ref=f59e18296]:
+              - generic "843519b6-592a-4fd5-b211-f1e52bd051ab" [ref=f59e18300]: Team Item • Card • Large
+              - button "Remove" [ref=f59e18302] [cursor=pointer]: ✕
+          - button "Add another component" [ref=f59e18303] [cursor=pointer]
+        - generic [ref=f59e18304]:
+          - generic [ref=f59e18305]: Template page sections, in order — leave empty for a listing with no item pages
+          - generic [ref=f59e18306]:
+            - generic [ref=f59e18307]: None — listing only
+            - button "Choose" [ref=f59e18308] [cursor=pointer]
+        - generic [ref=f59e18309]:
+          - generic [ref=f59e18310]: References — items of another type this one points at
+          - combobox "Add a relation to another type" [ref=f59e18313]:
+            - option "Add a relation to another type…" [selected]
+            - option "Content"
+            - option "Content Authors"
+            - option "Content Categories"
+            - option "Content Tags"
+            - option "Projects"
+            - option "Project Tags"
+            - option "Team"
+        - generic [ref=f59e18314]:
+          - generic [ref=f59e18315]: Slots — each item picks which component a slot shows, and fills the rows it repeats
+          - generic [ref=f59e18316]:
+            - generic [ref=f59e18317]:
+              - generic [ref=f59e18318]: "Team Media: Media, Avatar, Video Lightbox"
+              - button "Add slot" [ref=f59e18319] [cursor=pointer]
+            - generic [ref=f59e18320]:
+              - generic [ref=f59e18321]: "Links: Social Link List, Contact Details List"
+              - button "Add slot" [ref=f59e18322] [cursor=pointer]
+        - generic [ref=f59e18323]:
+          - generic [ref=f59e18324]: Fields — tick the props that are content, drag them into the order the CMS shows them in, tick the text prop that titles each item and derives its slug, and the fields a project may hide from its site
+          - generic [ref=f59e18325]:
+            - generic [aria-hidden] [ref=f59e18326]:
+              - generic [ref=f59e18327]: Prop
+              - generic [ref=f59e18328]: Type
+              - generic [ref=f59e18329]: Default
+              - generic [ref=f59e18330]: Key
+              - generic [ref=f59e18331]: Source
+              - generic [ref=f59e18332]: Title
+              - generic [ref=f59e18333]: Hidable
+            - generic "on 62e598f5-5644-4362-8223-64b44d8a28db" [ref=f59e18335] [cursor=pointer]:
+              - checkbox "Name string Full name teamMemberName Team Item • Medium Use Name as the title Let a project hide Name" [checked] [ref=f59e18336]
+              - generic [ref=f59e18337]: ⠿Name
+              - code [ref=f59e18338]: string
+              - generic [ref=f59e18339]: Full name
+              - generic [ref=f59e18340]: teamMemberName
+              - generic [ref=f59e18341]: Team Item • Medium
+              - checkbox "Use Name as the title" [checked] [ref=f59e18343]
+              - generic "Not in a hidable layer in Team Item • Medium, Team Item • Large, Team Item • Card • Medium, Team Item • Card • Large" [ref=f59e18344]:
+                - checkbox "Let a project hide Name" [disabled] [ref=f59e18345]
+            - generic "on 62e598f5-5644-4362-8223-64b44d8a28db" [ref=f59e18347] [cursor=pointer]:
+              - checkbox "Photo image https://cdn.prod.website-files.com/657a540b7d50276b9cb52564/6a239f8cde20611e2fcbf831_placeholder-image-dark.svg teamMemberPhoto Team Item • Medium Let a project hide Photo" [checked] [ref=f59e18348]
+              - generic [ref=f59e18349]: ⠿Photo
+              - code [ref=f59e18350]: image
+              - generic [ref=f59e18351]: https://cdn.prod.website-files.com/657a540b7d50276b9cb52564/6a239f8cde20611e2fcbf831_placeholder-image-dark.svg
+              - generic [ref=f59e18352]: teamMemberPhoto
+              - generic [ref=f59e18353]: Team Item • Medium
+              - 'generic "Hidable: a project can hide it from its site" [ref=f59e18354]':
+                - checkbox "Let a project hide Photo" [checked] [ref=f59e18355]
+            - generic "on 62e598f5-5644-4362-8223-64b44d8a28db" [ref=f59e18357] [cursor=pointer]:
+              - checkbox "Role string Job title teamMemberRole Team Item • Medium Use Role as the title Let a project hide Role" [checked] [ref=f59e18358]
+              - generic [ref=f59e18359]: ⠿Role
+              - code [ref=f59e18360]: string
+              - generic [ref=f59e18361]: Job title
+              - generic [ref=f59e18362]: teamMemberRole
+              - generic [ref=f59e18363]: Team Item • Medium
+              - checkbox "Use Role as the title" [ref=f59e18365]
+              - 'generic "Hidable: a project can hide it from its site" [ref=f59e18366]':
+                - checkbox "Let a project hide Role" [checked] [ref=f59e18367]
+            - generic "on e4fb7ada-1020-4846-8b0b-d6227c417f01" [ref=f59e18369] [cursor=pointer]:
+              - checkbox "Bio richText (object) teamMemberBio Team Item • Large Let a project hide Bio" [checked] [ref=f59e18370]
+              - generic [ref=f59e18371]: ⠿Bio
+              - code [ref=f59e18372]: richText
+              - generic [ref=f59e18373]: (object)
+              - generic [ref=f59e18374]: teamMemberBio
+              - generic [ref=f59e18375]: Team Item • Large
+              - 'generic "Hidable: a project can hide it from its site" [ref=f59e18376]':
+                - checkbox "Let a project hide Bio" [checked] [ref=f59e18377]
+            - generic "on 62e598f5-5644-4362-8223-64b44d8a28db" [ref=f59e18379] [cursor=pointer]:
+              - 'checkbox "Bio richText (object) paragraphText Team Item • Medium Hidable: a project can hide it from its site" [ref=f59e18380]'
+              - generic [ref=f59e18381]: Bio
+              - code [ref=f59e18382]: richText
+              - generic [ref=f59e18383]: (object)
+              - generic [ref=f59e18384]: paragraphText
+              - generic [ref=f59e18385]: Team Item • Medium
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on 9e7e1fbe-8e9e-45b5-8246-61c19e687dfd" [ref=f59e18387] [cursor=pointer]:
+              - 'checkbox "Text richText (object) headingText Heading Hidable: a project can hide it from its site" [ref=f59e18388]'
+              - generic [ref=f59e18389]: Text
+              - code [ref=f59e18390]: richText
+              - generic [ref=f59e18391]: (object)
+              - generic [ref=f59e18392]: headingText
+              - generic [ref=f59e18393]: Heading
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on el-text" [ref=f59e18395] [cursor=pointer]:
+              - 'checkbox "Text richText (object) textContent Text Hidable: a project can hide it from its site" [ref=f59e18396]'
+              - generic [ref=f59e18397]: Text
+              - code [ref=f59e18398]: richText
+              - generic [ref=f59e18399]: (object)
+              - generic [ref=f59e18400]: textContent
+              - generic [ref=f59e18401]: Text
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on el-button-static" [ref=f59e18403] [cursor=pointer]:
+              - 'checkbox "Hierarchy enum Primary buttonHierarchy Button • Static Hidable: a project can hide it from its site" [ref=f59e18404]'
+              - generic [ref=f59e18405]: Hierarchy
+              - code [ref=f59e18406]: enum
+              - generic [ref=f59e18407]: Primary
+              - generic [ref=f59e18408]: buttonHierarchy
+              - generic [ref=f59e18409]: Button • Static
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on el-button-static" [ref=f59e18411] [cursor=pointer]:
+              - 'checkbox "Leading Icon iconName category buttonLeadingIcon Button • Static Hidable: a project can hide it from its site" [ref=f59e18412]'
+              - generic [ref=f59e18413]: Leading Icon
+              - code [ref=f59e18414]: iconName
+              - generic [ref=f59e18415]: category
+              - generic [ref=f59e18416]: buttonLeadingIcon
+              - generic [ref=f59e18417]: Button • Static
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on el-button-static" [ref=f59e18419] [cursor=pointer]:
+              - 'checkbox "Trailing Icon iconName arrow_forward buttonTrailingIcon Button • Static Hidable: a project can hide it from its site" [ref=f59e18420]'
+              - generic [ref=f59e18421]: Trailing Icon
+              - code [ref=f59e18422]: iconName
+              - generic [ref=f59e18423]: arrow_forward
+              - generic [ref=f59e18424]: buttonTrailingIcon
+              - generic [ref=f59e18425]: Button • Static
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on el-button-static" [ref=f59e18427] [cursor=pointer]:
+              - 'checkbox "Label string Button buttonLabel Button • Static Use Label as the title Hidable: a project can hide it from its site" [ref=f59e18428]'
+              - generic [ref=f59e18429]: Label
+              - code [ref=f59e18430]: string
+              - generic [ref=f59e18431]: Button
+              - generic [ref=f59e18432]: buttonLabel
+              - generic [ref=f59e18433]: Button • Static
+              - checkbox "Use Label as the title" [ref=f59e18435]
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on bb57d385-17ef-487a-8d36-3c8534d8118a" [ref=f59e18437] [cursor=pointer]:
+              - 'checkbox "Icon iconName category iconGlyph Icon Hidable: a project can hide it from its site" [ref=f59e18438]'
+              - generic [ref=f59e18439]: Icon
+              - code [ref=f59e18440]: iconName
+              - generic [ref=f59e18441]: category
+              - generic [ref=f59e18442]: iconGlyph
+              - generic [ref=f59e18443]: Icon
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on e4fb7ada-1020-4846-8b0b-d6227c417f01" [ref=f59e18445] [cursor=pointer]:
+              - 'checkbox "Link link (empty) teamMemberLink Team Item • Large Hidable: a project can hide it from its site" [ref=f59e18446]'
+              - generic [ref=f59e18447]: Link
+              - code [ref=f59e18448]: link
+              - generic [ref=f59e18449]: (empty)
+              - generic [ref=f59e18450]: teamMemberLink
+              - generic [ref=f59e18451]: Team Item • Large
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on e4fb7ada-1020-4846-8b0b-d6227c417f01" [ref=f59e18453] [cursor=pointer]:
+              - 'checkbox "Link Label string View profile teamMemberLinkLabel Team Item • Large Use Link Label as the title Hidable: a project can hide it from its site" [ref=f59e18454]'
+              - generic [ref=f59e18455]: Link Label
+              - code [ref=f59e18456]: string
+              - generic [ref=f59e18457]: View profile
+              - generic [ref=f59e18458]: teamMemberLinkLabel
+              - generic [ref=f59e18459]: Team Item • Large
+              - checkbox "Use Link Label as the title" [ref=f59e18461]
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on 79985a2b-efad-4952-a03c-42de805da91b" [ref=f59e18463] [cursor=pointer]:
+              - 'checkbox "Expand items array 0 of 5 columns items Button Group Hidable: a project can hide it from its site" [ref=f59e18464]'
+              - generic [ref=f59e18465]:
+                - button "Expand" [ref=f59e18466]: ▸
+                - text: items
+              - code [ref=f59e18467]: array
+              - generic [ref=f59e18468]: 0 of 5 columns
+              - generic [ref=f59e18469]: items
+              - generic [ref=f59e18470]: Button Group
+              - 'generic "Hidable: a project can hide it from its site"'
+            - generic "on c63038b5-b704-4822-a9b8-df78b36b8132" [ref=f59e18472] [cursor=pointer]:
+              - 'checkbox "Border enum Inherit containerBorder Team Item • Card • Medium Hidable: a project can hide it from its site" [ref=f59e18473]'
+              - generic [ref=f59e18474]: Border
+              - code [ref=f59e18475]: enum
+              - generic [ref=f59e18476]: Inherit
+              - generic [ref=f59e18477]: containerBorder
+              - generic [ref=f59e18478]: Team Item • Card • Medium
+              - 'generic "Hidable: a project can hide it from its site"'
+          - generic [ref=f59e18479] [cursor=pointer]:
+            - checkbox "Show 26 props this collection cannot carry" [ref=f59e18480]
+            - text: Show 26 props this collection cannot carry
+        - generic [ref=f59e18481]:
+          - generic [ref=f59e18482]: Shop — show the shop's items instead of CMS ones. A shop type is never offered for a new CMS collection.
+          - combobox "Shop — show the shop's items instead of CMS ones. A shop type is never offered for a new CMS collection." [ref=f59e18483]:
+            - option "None — a CMS type"
+            - option "Products" [selected]
+            - option "Categories"
+          - generic [ref=f59e18490]:
+            - generic [ref=f59e18491]:
+              - generic [ref=f59e18492]: Name
+              - combobox "Shop field for Name" [ref=f59e18493]:
+                - option "Not mapped"
+                - option "name" [selected]
+                - option "slug"
+                - option "short_description"
+                - option "description"
+                - option "price"
+                - option "compare_at_price"
+            - generic [ref=f59e18494]:
+              - generic [ref=f59e18495]: Photo
+              - combobox "Shop field for Photo" [ref=f59e18496]:
+                - option "Not mapped"
+                - option "image" [selected]
+            - generic [ref=f59e18497]:
+              - generic [ref=f59e18498]: Role
+              - combobox "Shop field for Role" [ref=f59e18499]:
+                - option "Not mapped"
+                - option "name"
+                - option "slug"
+                - option "short_description"
+                - option "description"
+                - option "price" [selected]
+                - option "compare_at_price"
+            - generic [ref=f59e18500]:
+              - generic [ref=f59e18501]: Bio
+              - combobox "Shop field for Bio" [ref=f59e18502]:
+                - option "Not mapped" [selected]
+                - option "name"
+                - option "slug"
+                - option "short_description"
+                - option "description"
+        - generic [ref=f59e18484]:
+          - generic [ref=f59e18485]: Structured data — the schema.org node each item page publishes about its item
+          - combobox "Structured data — the schema.org node each item page publishes about its item" [ref=f59e18486]:
+            - option "None" [selected]
+            - option "BlogPosting"
+            - option "Article"
+            - option "NewsArticle"
+            - option "Product"
+            - option "Person"
+      - generic [ref=f59e18487]:
+        - button "Cancel" [ref=f59e18488] [cursor=pointer]
+        - button "Save" [ref=f59e18489] [cursor=pointer]
+  - generic:
+    - region "Notifications alt+T"

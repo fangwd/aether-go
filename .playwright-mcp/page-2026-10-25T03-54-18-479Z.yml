@@ -1,0 +1,58 @@
+- generic [ref=f78e1]:
+  - generic [ref=f78e6]:
+    - generic [ref=f78e594]:
+      - generic [ref=f78e595]:
+        - paragraph [ref=f78e596]: Products
+        - paragraph [ref=f78e597]: "1"
+        - button "New product" [ref=f78e598] [cursor=pointer]
+      - table [ref=f78e606]:
+        - rowgroup [ref=f78e607]:
+          - row [ref=f78e608]:
+            - columnheader [ref=f78e609]:
+              - generic:
+                - paragraph
+            - columnheader [ref=f78e610]:
+              - paragraph [ref=f78e612]: Name
+            - columnheader [ref=f78e613]:
+              - paragraph [ref=f78e615]: Price
+            - columnheader [ref=f78e616]:
+              - paragraph [ref=f78e618]: Stock
+            - columnheader [ref=f78e619]:
+              - paragraph [ref=f78e621]: Status
+        - rowgroup [ref=f78e622]:
+          - button "Classic Tee Organic US$25.00 12 Active" [active] [ref=f78e778] [cursor=pointer]:
+            - cell [ref=f78e624]
+            - cell "Classic Tee Organic" [ref=f78e779]
+            - cell "US$25.00" [ref=f78e628]
+            - cell "12" [ref=f78e630]
+            - cell "Active" [ref=f78e632]
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f78e638]:
+    - generic [ref=f78e640]:
+      - paragraph [ref=f78e641]: Shop
+      - button "Collapse panel" [ref=f78e644] [cursor=pointer]
+    - tree "Shop sections" [ref=f78e651]:
+      - treeitem [level=1] [selected] [ref=f78e652] [cursor=pointer]:
+        - paragraph [ref=f78e659]: Products
+      - treeitem [level=1] [ref=f78e660] [cursor=pointer]:
+        - paragraph [ref=f78e666]: Categories
+      - treeitem [level=1] [ref=f78e667] [cursor=pointer]:
+        - paragraph [ref=f78e675]: Inventory
+      - treeitem [level=1] [ref=f78e676] [cursor=pointer]:
+        - paragraph [ref=f78e683]: Orders
+  - navigation "Side navigation" [ref=f78e224]:
+    - generic [ref=f78e225]:
+      - button "Agents" [ref=f78e226] [cursor=pointer]
+      - button "Shop" [ref=f78e684] [cursor=pointer]
+    - button "account menu" [ref=f78e346] [cursor=pointer]
+  - generic [ref=f78e349]:
+    - button "Back" [ref=f78e690] [cursor=pointer]
+    - generic [ref=f78e514]:
+      - button "Share" [ref=f78e515] [cursor=pointer]
+      - button "CMS" [ref=f78e519] [cursor=pointer]
+      - button "Shop" [pressed] [ref=f78e525] [cursor=pointer]
+      - button "Preview site" [ref=f78e530] [cursor=pointer]
+      - button "Site analytics" [ref=f78e534] [cursor=pointer]
+      - button "Site settings" [ref=f78e539] [cursor=pointer]
+      - button "Publish" [ref=f78e544] [cursor=pointer]

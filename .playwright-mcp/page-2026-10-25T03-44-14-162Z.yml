@@ -1,0 +1,28 @@
+- generic [ref=f46e3]:
+  - generic [ref=f46e4]:
+    - navigation "Authentication" [ref=f46e5]:
+      - link "Relume home" [ref=f46e6] [cursor=pointer]:
+        - /url: /
+      - button "Sign up" [ref=f46e9] [cursor=pointer]
+    - group "Log in" [ref=f46e18]:
+      - generic [ref=f46e20]:
+        - paragraph [ref=f46e21]: "Environment: Local"
+        - paragraph [ref=f46e23]: http://localhost:8000/
+      - heading "Welcome back" [level=1] [ref=f46e26]
+      - generic [ref=f46e27]:
+        - button "Continue with Google" [ref=f46e28] [cursor=pointer]
+        - button "Continue with SSO" [ref=f46e38] [cursor=pointer]
+      - generic [ref=f46e46]: or
+      - generic [ref=f46e50]:
+        - textbox "Email address" [ref=f46e55]:
+          - /placeholder: Email address...
+        - generic [ref=f46e59]:
+          - textbox "Password" [ref=f46e60]:
+            - /placeholder: Password...
+          - button "Show password" [ref=f46e62] [cursor=pointer]
+        - region "Security verification"
+        - button "Continue" [disabled] [ref=f46e67]
+        - paragraph [ref=f46e71]:
+          - button "Forgot password" [ref=f46e72] [cursor=pointer]
+  - generic:
+    - region "Notifications alt+T"

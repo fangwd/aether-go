@@ -1,0 +1,56 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic [aria-hidden]:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - button:
+                              - generic: Publish
+                          - generic:
+                            - button:
+                              - generic: Create Site
+                          - generic:
+                            - generic:
+                              - searchbox
+                          - generic:
+                            - generic:
+                              - button:
+                                - generic: All sites
+                                - generic:
+                                  - generic:
+                                    - paragraph: "0"
+                              - button:
+                                - generic: Created by me
+                              - button:
+                                - generic: Shared with me
+                          - generic:
+                            - button:
+                              - generic: Free
+              - main:
+                - generic:
+                  - generic:
+                    - generic:
+                      - heading [level=1]: Create your first site
+                      - paragraph: Tell us what you're building and we'll draft the first version.
+                    - button:
+                      - generic: Create site
+            - generic:
+              - region "Notifications alt+T"
+  - dialog [active] [ref=f27e2]:
+    - generic [ref=f27e3]:
+      - generic [ref=f27e4]:
+        - 'button "Play video: Welcome to Publish" [ref=f27e6] [cursor=pointer]'
+        - generic [ref=f27e9]:
+          - heading "Welcome to Publish" [level=2] [ref=f27e10]
+          - paragraph [ref=f27e11]: Tell Relume what you’re building. Get a sitemap, wireframes and a designed site — live on the web, in minutes not weeks.
+      - generic [ref=f27e12]:
+        - button "Skip" [ref=f27e13] [cursor=pointer]
+        - button "Start building" [ref=f27e17] [cursor=pointer]

@@ -1,0 +1,61 @@
+- main [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - paragraph [ref=e7]: Relume Nova
+      - generic [ref=e8]: Local
+    - generic [ref=e9]:
+      - textbox "Describe a company to generate a site" [ref=e10]:
+        - /placeholder: Describe a company to generate a site…
+      - button "Generate" [ref=e11] [cursor=pointer]
+  - navigation [ref=e15]:
+    - link "Publish Go live and grow your website" [ref=e16] [cursor=pointer]:
+      - /url: /sites
+      - generic [ref=e22]:
+        - generic [ref=e23]: Publish
+        - generic [ref=e24]: Go live and grow your website
+    - link "Export Build for Figma, Webflow or React" [ref=e25] [cursor=pointer]:
+      - /url: /dashboard
+      - generic [ref=e33]:
+        - generic [ref=e34]: Export
+        - generic [ref=e35]: Build for Figma, Webflow or React
+    - link "Builder /builder" [ref=e36] [cursor=pointer]:
+      - /url: /builder
+      - generic [ref=e40]:
+        - generic [ref=e41]: Builder
+        - generic [ref=e42]: /builder
+    - link "Admin /admin" [ref=e43] [cursor=pointer]:
+      - /url: /admin
+      - generic [ref=e48]:
+        - generic [ref=e49]: Admin
+        - generic [ref=e50]: /admin
+    - link "Login /app/login" [ref=e51] [cursor=pointer]:
+      - /url: /app/login
+      - generic [ref=e56]:
+        - generic [ref=e57]: Login
+        - generic [ref=e58]: /app/login
+    - link "Anon /app/start" [ref=e59] [cursor=pointer]:
+      - /url: /app/start
+      - generic [ref=e64]:
+        - generic [ref=e65]: Anon
+        - generic [ref=e66]: /app/start
+  - generic [ref=e67]:
+    - generic [ref=e68]:
+      - paragraph [ref=e69]: Revenue
+      - paragraph [ref=e70]: Paid plans active today · via PostHog
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - paragraph [ref=e73]: Net MRR
+        - paragraph [ref=e74]: —
+      - generic [ref=e75]:
+        - paragraph [ref=e76]: Paid hosting plans
+        - paragraph [ref=e77]: —
+      - generic [ref=e78]:
+        - paragraph [ref=e79]: Paid workspace plans
+        - paragraph [ref=e80]: —
+    - generic [ref=e81]:
+      - generic [ref=e86]:
+        - paragraph [ref=e87]: Log in to see revenue
+        - paragraph [ref=e88]: Revenue stats are visible to staff accounts.
+      - link "Log in" [ref=e89] [cursor=pointer]:
+        - /url: /app/login
+  - paragraph [ref=e94]: In production and staging, Webflow serves this page instead.

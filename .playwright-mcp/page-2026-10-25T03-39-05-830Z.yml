@@ -1,0 +1,35 @@
+- generic [ref=f3e3]:
+  - generic [ref=f3e4]:
+    - navigation "Authentication" [ref=f3e5]:
+      - link "Relume home" [ref=f3e6] [cursor=pointer]:
+        - /url: /
+      - button "Sign in" [active] [ref=f3e73] [cursor=pointer]
+    - group "Sign up" [ref=f3e78]:
+      - generic [ref=f3e81]:
+        - heading "Your AI Sitebuilder" [level=1] [ref=f3e82]
+        - paragraph [ref=f3e85]: Trusted by over 1 million freelancers and agencies around the globe
+      - generic [ref=f3e87]:
+        - button "Continue with Google" [ref=f3e88] [cursor=pointer]
+        - generic [ref=f3e98]: or
+      - generic [ref=f3e102]:
+        - generic [ref=f3e104]:
+          - generic [ref=f3e105]: Email address
+          - textbox "Email address" [ref=f3e109]:
+            - /placeholder: Enter your email address...
+        - button "Continue" [ref=f3e111] [cursor=pointer]
+        - paragraph [ref=f3e115]:
+          - text: By continuing, you agree to receive updates from Relume and accept our
+          - link "Terms & Conditions" [ref=f3e116] [cursor=pointer]:
+            - /url: https://www.relume.ai/legal/terms
+          - text: ","
+          - link "Licensing Agreement" [ref=f3e117] [cursor=pointer]:
+            - /url: https://www.relume.ai/legal/licensing-agreement
+          - text: ", and"
+          - link "Privacy Policy" [ref=f3e118] [cursor=pointer]:
+            - /url: https://www.relume.ai/legal/privacy-policy
+          - text: .
+    - complementary "Customer testimonial" [ref=f3e119]:
+      - figure "@jordanphughes (Co-founder, Untitled UI)" [ref=f3e123]:
+        - paragraph [ref=f3e124]: The scale, quality and control of this library is insane. Everything works together, so you can spin up polished websites with confidence. It's the fastest way I've found to turn a client's idea into a real screen, so I can spend more time on the parts I actually enjoy.
+  - generic:
+    - region "Notifications alt+T"

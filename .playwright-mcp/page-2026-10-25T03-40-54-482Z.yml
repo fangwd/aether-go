@@ -1,0 +1,57 @@
+- generic [active] [ref=f31e1]:
+  - generic [ref=f31e15]:
+    - generic [ref=f31e263]:
+      - generic [ref=f31e264]:
+        - paragraph [ref=f31e265]: Products
+        - paragraph [ref=f31e266]: "1"
+        - button "New product" [ref=f31e267] [cursor=pointer]
+      - table [ref=f31e275]:
+        - rowgroup [ref=f31e276]:
+          - row [ref=f31e277]:
+            - columnheader [ref=f31e278]:
+              - generic:
+                - paragraph
+            - columnheader [ref=f31e279]:
+              - paragraph [ref=f31e281]: Name
+            - columnheader [ref=f31e282]:
+              - paragraph [ref=f31e284]: Price
+            - columnheader [ref=f31e285]:
+              - paragraph [ref=f31e287]: Stock
+            - columnheader [ref=f31e288]:
+              - paragraph [ref=f31e290]: Status
+        - rowgroup [ref=f31e291]:
+          - button "Classic Tee US$25.00 12 Active" [ref=f31e292] [cursor=pointer]:
+            - cell [ref=f31e293]
+            - cell "Classic Tee" [ref=f31e295]
+            - cell "US$25.00" [ref=f31e297]
+            - cell "12" [ref=f31e299]
+            - cell "Active" [ref=f31e301]
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f31e39]:
+    - generic [ref=f31e41]:
+      - paragraph [ref=f31e42]: Shop
+      - button "Collapse panel" [ref=f31e45] [cursor=pointer]
+    - tree "Shop sections" [ref=f31e52]:
+      - treeitem [level=1] [selected] [ref=f31e53] [cursor=pointer]:
+        - paragraph [ref=f31e60]: Products
+      - treeitem [level=1] [ref=f31e61] [cursor=pointer]:
+        - paragraph [ref=f31e67]: Categories
+      - treeitem [level=1] [ref=f31e68] [cursor=pointer]:
+        - paragraph [ref=f31e76]: Inventory
+      - treeitem [level=1] [ref=f31e77] [cursor=pointer]:
+        - paragraph [ref=f31e84]: Orders
+  - navigation "Side navigation" [ref=f31e85]:
+    - generic [ref=f31e86]:
+      - button "Agents" [ref=f31e87] [cursor=pointer]
+      - button "Shop" [ref=f31e154] [cursor=pointer]
+    - button "account menu" [ref=f31e161] [cursor=pointer]
+  - generic [ref=f31e164]:
+    - button "Back" [ref=f31e166] [cursor=pointer]
+    - generic [ref=f31e171]:
+      - button "Share" [ref=f31e172] [cursor=pointer]
+      - button "Shop" [pressed] [ref=f31e176] [cursor=pointer]
+      - button "Preview site" [ref=f31e181] [cursor=pointer]
+      - button "Site analytics" [ref=f31e185] [cursor=pointer]
+      - button "Site settings" [ref=f31e190] [cursor=pointer]
+      - button "Generate sitemap" [ref=f31e195] [cursor=pointer]

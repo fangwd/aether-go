@@ -1,0 +1,18 @@
+[     339ms] [INFO] [rsbuild] WebSocket connecting... @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[     352ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:33311
+[     415ms] [INFO] [rsbuild] WebSocket connected. @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[     415ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[     416ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[    1716ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[    4103ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[   10083ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180

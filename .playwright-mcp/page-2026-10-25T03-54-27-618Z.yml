@@ -1,0 +1,79 @@
+- generic [active] [ref=f78e1]:
+  - generic [ref=f78e6]:
+    - generic [ref=f78e12]:
+      - generic [ref=f78e13]:
+        - generic [ref=f78e14] [cursor=pointer]:
+          - generic [ref=f78e18]: Home
+          - button "More options" [ref=f78e22]
+        - generic [ref=f78e27]:
+          - generic [ref=f78e43]:
+            - paragraph [ref=f78e44]: Navbar / Site Navigation
+            - button "Select a component" [ref=f78e45] [cursor=pointer]
+          - generic [ref=f78e57]:
+            - generic [ref=f78e58]:
+              - generic [ref=f78e59]:
+                - generic [ref=f78e60]: Tagline
+                - heading [level=2] [ref=f78e65]:
+                  - textbox [ref=f78e67]
+              - paragraph [ref=f78e70]:
+                - textbox [ref=f78e72]
+            - generic [ref=f78e784]:
+              - generic [ref=f78e785]:
+                - heading "Classic Tee Organic" [level=4] [ref=f78e786]
+                - generic [ref=f78e789]: $25.00
+              - paragraph [ref=f78e792]:
+                - textbox [ref=f78e794]
+            - generic [ref=f78e102]:
+              - generic [ref=f78e103]:
+                - heading [level=3] [ref=f78e104]:
+                  - textbox [ref=f78e106]
+                - paragraph [ref=f78e107]:
+                  - textbox [ref=f78e109]
+              - generic [ref=f78e110]: Button
+          - generic [ref=f78e164]:
+            - paragraph [ref=f78e165]: Footer
+            - button "Select a component" [ref=f78e166] [cursor=pointer]
+      - button "Add page" [ref=f78e174] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - navigation "Side navigation" [ref=f78e224]:
+    - generic [ref=f78e225]:
+      - button "Agents" [ref=f78e226] [cursor=pointer]
+      - button "Insert" [ref=f78e806] [cursor=pointer]
+      - button "Pages" [ref=f78e811] [cursor=pointer]
+      - button "Layers" [ref=f78e817] [cursor=pointer]
+      - button "Library" [ref=f78e824] [cursor=pointer]
+      - button "Styling" [ref=f78e830] [cursor=pointer]
+    - button "account menu" [ref=f78e346] [cursor=pointer]
+  - generic [ref=f78e349]:
+    - generic [ref=f78e858]:
+      - link "Back to sites" [ref=f78e859] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f78e863]:
+        - paragraph [ref=f78e866]:
+          - generic [ref=f78e867]: Untitled
+        - button "Project actions" [ref=f78e868] [cursor=pointer]
+    - tablist "Editor mode" [ref=f78e876]:
+      - generic [ref=f78e877]:
+        - tab "Brief" [ref=f78e879] [cursor=pointer]
+        - tab "Sitemap" [ref=f78e908] [cursor=pointer]
+        - tab "Wireframe" [ref=f78e956] [cursor=pointer]
+        - tab "Design" [selected] [ref=f78e986] [cursor=pointer]
+    - generic [ref=f78e514]:
+      - button "Share" [ref=f78e515] [cursor=pointer]
+      - button "CMS" [ref=f78e519] [cursor=pointer]
+      - button "Shop" [ref=f78e525] [cursor=pointer]
+      - button "Preview site" [ref=f78e530] [cursor=pointer]
+      - button "Site analytics" [ref=f78e534] [cursor=pointer]
+      - button "Site settings" [ref=f78e539] [cursor=pointer]
+      - button "Publish" [ref=f78e544] [cursor=pointer]
+  - generic [ref=f78e1022]:
+    - button "Cursor" [disabled] [pressed] [ref=f78e1023] [cursor=pointer]
+    - button "Hand tool" [ref=f78e1027] [cursor=pointer]
+    - button "Comment" [ref=f78e1031] [cursor=pointer]
+    - button "Zoom" [ref=f78e1036] [cursor=pointer]:
+      - generic [ref=f78e1037]: 50%
+    - radiogroup [ref=f78e1045]:
+      - radio "Desktop" [checked] [ref=f78e1046] [cursor=pointer]
+      - radio "Tablet" [ref=f78e1051] [cursor=pointer]
+      - radio "Mobile" [ref=f78e1055] [cursor=pointer]

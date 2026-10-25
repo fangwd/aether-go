@@ -1,0 +1,49 @@
+- generic [active] [ref=f44e1]:
+  - generic [ref=f44e14]:
+    - generic [ref=f44e15]:
+      - generic [ref=f44e18]:
+        - generic [ref=f44e19]:
+          - paragraph [ref=f44e20]: Products
+          - paragraph [ref=f44e21]: "1"
+        - table [ref=f44e23]:
+          - rowgroup [ref=f44e24]:
+            - row [ref=f44e25]:
+              - columnheader [ref=f44e26]:
+                - generic:
+                  - paragraph
+              - columnheader [ref=f44e27]:
+                - paragraph [ref=f44e29]: Name
+              - columnheader [ref=f44e30]:
+                - paragraph [ref=f44e32]: Price
+              - columnheader [ref=f44e33]:
+                - paragraph [ref=f44e35]: Stock
+              - columnheader [ref=f44e36]:
+                - paragraph [ref=f44e38]: Status
+          - rowgroup [ref=f44e39]:
+            - row "Classic Tee US$25.00 12 Active" [ref=f44e40]:
+              - cell [ref=f44e41]
+              - cell "Classic Tee" [ref=f44e43]
+              - cell "US$25.00" [ref=f44e45]
+              - cell "12" [ref=f44e47]
+              - cell "Active" [ref=f44e49]
+      - generic:
+        - region "Notifications alt+T"
+    - status "Loading Publish" [ref=f44e51]
+  - generic [ref=f44e66]:
+    - generic [ref=f44e68]:
+      - paragraph [ref=f44e69]: Shop
+      - button "Collapse panel" [ref=f44e72] [cursor=pointer]
+    - tree "Shop sections" [ref=f44e79]:
+      - treeitem [level=1] [selected] [ref=f44e80] [cursor=pointer]:
+        - paragraph [ref=f44e87]: Products
+      - treeitem [level=1] [ref=f44e88] [cursor=pointer]:
+        - paragraph [ref=f44e94]: Categories
+      - treeitem [level=1] [ref=f44e95] [cursor=pointer]:
+        - paragraph [ref=f44e103]: Inventory
+      - treeitem [level=1] [ref=f44e104] [cursor=pointer]:
+        - paragraph [ref=f44e111]: Orders
+  - generic [ref=f44e112]:
+    - button "Back" [ref=f44e114] [cursor=pointer]
+    - generic [ref=f44e119]:
+      - button "Shop" [pressed] [ref=f44e120] [cursor=pointer]
+      - button "Preview site" [ref=f44e125] [cursor=pointer]

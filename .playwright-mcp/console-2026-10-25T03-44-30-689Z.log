@@ -1,0 +1,5 @@
+[    7048ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[   26734ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[   51419ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[   80802ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180
+[  104511ms] [ERROR] WebSocket connection to 'ws://localhost:4517/builder' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/builder.js:77180

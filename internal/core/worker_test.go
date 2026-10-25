@@ -87,10 +87,13 @@ func (w *workerWorld) exec(sql string) {
 	}
 }
 
+// unpublished counts undelivered events other than the catalog notice, which
+// waits out its quiet period by design.
 func (w *workerWorld) unpublished() int {
 	w.t.Helper()
 	var n int
-	if err := w.api.Admin.QueryRow(context.Background(), "SELECT count(*) FROM outbox_event WHERE published_at IS NULL").Scan(&n); err != nil {
+	if err := w.api.Admin.QueryRow(context.Background(),
+		"SELECT count(*) FROM outbox_event WHERE published_at IS NULL AND topic <> 'catalog.changed'").Scan(&n); err != nil {
 		w.t.Fatal(err)
 	}
 	return n

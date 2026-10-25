@@ -1,0 +1,26 @@
+- generic [ref=f27e26]:
+  - generic [ref=f27e27]:
+    - generic [ref=f27e33]:
+      - button "Publish — switch Relume app" [ref=f27e35] [cursor=pointer]:
+        - generic [ref=f27e40]: Publish
+      - button "Create Site" [ref=f27e44] [cursor=pointer]
+      - searchbox "Search sites" [ref=f27e55]
+      - generic [ref=f27e57]:
+        - button [ref=f27e58] [cursor=pointer]:
+          - generic [ref=f27e62]: All sites
+          - paragraph [ref=f27e66]: "0"
+        - button "Created by me" [ref=f27e67] [cursor=pointer]
+        - button "Shared with me" [ref=f27e74] [cursor=pointer]
+      - button "Avatar Free" [ref=f27e81] [cursor=pointer]:
+        - generic [ref=f27e82]:
+          - img "Avatar" [ref=f27e83]
+          - paragraph
+        - generic [ref=f27e84]: Free
+    - main "Sites" [ref=f27e86]:
+      - generic [ref=f27e88]:
+        - generic [ref=f27e93]:
+          - heading "Create your first site" [level=1] [ref=f27e94]
+          - paragraph [ref=f27e95]: Tell us what you're building and we'll draft the first version.
+        - button "Create site" [ref=f27e96] [cursor=pointer]
+  - generic:
+    - region "Notifications alt+T"

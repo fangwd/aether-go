@@ -1,0 +1,45 @@
+- generic [active] [ref=f75e1]:
+  - generic [ref=f75e6]:
+    - status [ref=f75e309]:
+      - generic [ref=f75e310]: Loading
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f75e316]:
+    - generic [ref=f75e322]:
+      - generic [ref=f75e324]:
+        - paragraph [ref=f75e325]: Layers
+        - button "Collapse panel" [ref=f75e328] [cursor=pointer]
+      - generic [ref=f75e345]:
+        - heading "No page selected" [level=3] [ref=f75e346]
+        - paragraph [ref=f75e347]: Select a page to see its layers
+    - separator [ref=f75e348]
+  - navigation "Side navigation" [ref=f75e32]:
+    - generic [ref=f75e33]:
+      - button "Agents" [ref=f75e34] [cursor=pointer]
+      - button "Insert" [ref=f75e351] [cursor=pointer]
+      - button "Pages" [ref=f75e356] [cursor=pointer]
+      - button "Layers" [ref=f75e362] [cursor=pointer]
+      - button "Library" [ref=f75e101] [cursor=pointer]
+      - button "Styling" [ref=f75e369] [cursor=pointer]
+    - button "account menu" [ref=f75e108] [cursor=pointer]
+  - generic [ref=f75e111]:
+    - generic [ref=f75e113]:
+      - link "Back to sites" [ref=f75e114] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f75e118]:
+        - paragraph [ref=f75e121]:
+          - generic [ref=f75e122]: Untitled
+        - button "Project actions" [ref=f75e123] [cursor=pointer]
+    - tablist "Editor mode" [ref=f75e131]:
+      - generic [ref=f75e132]:
+        - tab "Brief" [ref=f75e134] [cursor=pointer]
+        - tab "Sitemap" [ref=f75e163] [cursor=pointer]
+        - tab "Wireframe" [ref=f75e211] [cursor=pointer]
+        - tab "Design" [selected] [ref=f75e241] [cursor=pointer]
+    - generic [ref=f75e276]:
+      - button "Share" [ref=f75e277] [cursor=pointer]
+      - button "Shop" [ref=f75e281] [cursor=pointer]
+      - button "Preview site" [ref=f75e286] [cursor=pointer]
+      - button "Site analytics" [ref=f75e290] [cursor=pointer]
+      - button "Site settings" [ref=f75e295] [cursor=pointer]
+      - button "Publish" [ref=f75e397] [cursor=pointer]

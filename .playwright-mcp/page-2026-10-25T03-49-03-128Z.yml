@@ -1,0 +1,92 @@
+- generic [ref=f75e1]:
+  - generic [ref=f75e6]:
+    - generic [ref=f75e409]:
+      - generic [ref=f75e410]:
+        - generic [ref=f75e411] [cursor=pointer]:
+          - generic [ref=f75e415]: Home
+          - button "More options" [ref=f75e419]
+        - generic [ref=f75e424]:
+          - generic [ref=f75e440]:
+            - paragraph [ref=f75e441]: Navbar / Site Navigation
+            - button "Select a component" [ref=f75e442] [cursor=pointer]
+          - button "Section" [ref=f75e452] [cursor=pointer]
+          - generic [ref=f75e508]:
+            - paragraph [ref=f75e509]: Footer
+            - button "Select a component" [ref=f75e510] [cursor=pointer]
+      - button "Add page" [ref=f75e518] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f75e316]:
+    - generic [ref=f75e598]:
+      - generic [ref=f75e599]:
+        - generic [ref=f75e600]:
+          - paragraph [ref=f75e601]: Insert
+          - button "Collapse panel" [ref=f75e604] [cursor=pointer]
+        - searchbox "Search" [ref=f75e618]
+      - generic [ref=f75e623]:
+        - paragraph [ref=f75e624]: Categories
+        - button "Audience Fit / Qualification" [ref=f75e625] [cursor=pointer]
+        - button "Banner / Announcement Strip" [ref=f75e628] [cursor=pointer]
+        - button "Call to Action / Conversion" [ref=f75e631] [cursor=pointer]
+        - button "Case Study / Outcome Showcase" [ref=f75e634] [cursor=pointer]
+        - button "Comparison" [ref=f75e637] [cursor=pointer]
+        - button "Contact / Location" [ref=f75e640] [cursor=pointer]
+        - button "Content Body / Long-form" [ref=f75e643] [cursor=pointer]
+        - button "Content Feed / Listing" [ref=f75e646] [cursor=pointer]
+        - button "Credibility / Logo List" [ref=f75e649] [cursor=pointer]
+        - button "Code Embed" [ref=f75e652] [cursor=pointer]
+        - button "FAQ / Objection Handling" [ref=f75e655] [cursor=pointer]
+        - button "Feature / Attribute" [ref=f75e658] [cursor=pointer]
+        - button "Feature / Attribute List" [ref=f75e661] [cursor=pointer]
+        - button "Gallery / Visual Evidence" [ref=f75e664] [cursor=pointer]
+        - button "Hero / Primary Orientation" [ref=f75e667] [cursor=pointer]
+        - button "Offering Catalog" [ref=f75e670] [cursor=pointer]
+        - button "Page Header / Orientation" [ref=f75e673] [cursor=pointer]
+        - button "Pricing / Exchange" [ref=f75e676] [cursor=pointer]
+        - button "Process / Step Explanation" [ref=f75e679] [cursor=pointer]
+        - button "Projects / Portfolio" [ref=f75e682] [cursor=pointer]
+        - button "Stat / Metric Highlight" [ref=f75e685] [cursor=pointer]
+        - button "Team / People Showcase" [ref=f75e688] [cursor=pointer]
+        - button "[Test] Embed" [ref=f75e691] [cursor=pointer]
+        - button "Third-Party Endorsement" [ref=f75e694] [cursor=pointer]
+    - separator [ref=f75e348]
+  - navigation "Side navigation" [ref=f75e32]:
+    - generic [ref=f75e33]:
+      - button "Agents" [ref=f75e34] [cursor=pointer]
+      - button "Insert" [active] [ref=f75e351] [cursor=pointer]
+      - button "Pages" [ref=f75e356] [cursor=pointer]
+      - button "Layers" [ref=f75e362] [cursor=pointer]
+      - button "Library" [ref=f75e101] [cursor=pointer]
+      - button "Styling" [ref=f75e369] [cursor=pointer]
+    - button "account menu" [ref=f75e108] [cursor=pointer]
+  - generic [ref=f75e111]:
+    - generic [ref=f75e113]:
+      - link "Back to sites" [ref=f75e114] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f75e118]:
+        - paragraph [ref=f75e121]:
+          - generic [ref=f75e122]: Untitled
+        - button "Project actions" [ref=f75e123] [cursor=pointer]
+    - tablist "Editor mode" [ref=f75e131]:
+      - generic [ref=f75e132]:
+        - tab "Brief" [ref=f75e134] [cursor=pointer]
+        - tab "Sitemap" [ref=f75e163] [cursor=pointer]
+        - tab "Wireframe" [ref=f75e211] [cursor=pointer]
+        - tab "Design" [selected] [ref=f75e241] [cursor=pointer]
+    - generic [ref=f75e276]:
+      - button "Share" [ref=f75e277] [cursor=pointer]
+      - button "Shop" [ref=f75e281] [cursor=pointer]
+      - button "Preview site" [ref=f75e286] [cursor=pointer]
+      - button "Site analytics" [ref=f75e290] [cursor=pointer]
+      - button "Site settings" [ref=f75e295] [cursor=pointer]
+      - button "Publish" [ref=f75e397] [cursor=pointer]
+  - generic [ref=f75e524]:
+    - button "Cursor" [disabled] [pressed] [ref=f75e525] [cursor=pointer]
+    - button "Hand tool" [ref=f75e529] [cursor=pointer]
+    - button "Comment" [ref=f75e533] [cursor=pointer]
+    - button "Zoom" [ref=f75e538] [cursor=pointer]:
+      - generic [ref=f75e539]: 50%
+    - radiogroup [ref=f75e547]:
+      - radio "Desktop" [checked] [ref=f75e548] [cursor=pointer]
+      - radio "Tablet" [ref=f75e553] [cursor=pointer]
+      - radio "Mobile" [ref=f75e557] [cursor=pointer]

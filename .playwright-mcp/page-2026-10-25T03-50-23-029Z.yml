@@ -1,0 +1,180 @@
+- generic [ref=f75e1]:
+  - generic [ref=f75e6]:
+    - generic [ref=f75e409]:
+      - generic [ref=f75e410]:
+        - generic [ref=f75e411] [cursor=pointer]:
+          - generic [ref=f75e415]: Home
+          - button "More options" [ref=f75e419]
+        - generic [ref=f75e424]:
+          - generic [ref=f75e440]:
+            - paragraph [ref=f75e441]: Navbar / Site Navigation
+            - button "Select a component" [ref=f75e442] [cursor=pointer]
+          - generic [ref=f75e994]:
+            - generic [ref=f75e995]:
+              - generic [ref=f75e996]:
+                - generic [ref=f75e997]: Tagline
+                - heading [level=2] [ref=f75e1002]:
+                  - textbox [ref=f75e1004]
+              - paragraph [ref=f75e1007]:
+                - textbox [ref=f75e1009]
+            - generic [ref=f75e1011]:
+              - generic [ref=f75e1016]:
+                - generic [ref=f75e1017]:
+                  - heading "Full name" [level=4] [ref=f75e1018]
+                  - generic [ref=f75e1021]: Job title
+                - paragraph [ref=f75e1024]:
+                  - textbox [ref=f75e1026]
+              - generic [ref=f75e1042]:
+                - generic [ref=f75e1043]:
+                  - heading "Full name" [level=4] [ref=f75e1044]
+                  - generic [ref=f75e1047]: Job title
+                - paragraph [ref=f75e1050]:
+                  - textbox [ref=f75e1052]
+              - generic [ref=f75e1068]:
+                - generic [ref=f75e1069]:
+                  - heading "Full name" [level=4] [ref=f75e1070]
+                  - generic [ref=f75e1073]: Job title
+                - paragraph [ref=f75e1076]:
+                  - textbox [ref=f75e1078]
+            - generic [ref=f75e1091]:
+              - generic [ref=f75e1092]:
+                - heading [level=3] [ref=f75e1093]:
+                  - textbox [ref=f75e1095]
+                - paragraph [ref=f75e1096]:
+                  - textbox [ref=f75e1098]
+              - generic [ref=f75e1099]: Button
+          - generic [ref=f75e508]:
+            - paragraph [ref=f75e509]: Footer
+            - button "Select a component" [ref=f75e510] [cursor=pointer]
+      - button "Add page" [ref=f75e518] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f75e316]:
+    - generic [ref=f75e1438]:
+      - generic [ref=f75e1440]:
+        - paragraph [ref=f75e1441]: Layers
+        - generic [ref=f75e1442]:
+          - button "Insert component" [ref=f75e1444] [cursor=pointer]
+          - button "Collapse panel" [ref=f75e1449] [cursor=pointer]
+      - tree "Layers" [ref=f75e1461]:
+        - treeitem [level=1] [ref=f75e1462] [cursor=pointer]:
+          - paragraph [ref=f75e1468]: Navbar
+        - treeitem [expanded] [level=1] [ref=f75e1469] [cursor=pointer]:
+          - button "Collapse item" [expanded] [ref=f75e1470]
+          - paragraph [ref=f75e1479]: Team / People Showcase
+        - group [ref=f75e1480]:
+          - treeitem "Expand item Section Content Block • Vertical — Center Section" [level=2] [ref=f75e1481] [cursor=pointer]:
+            - button "Expand item" [ref=f75e1482]
+            - paragraph [ref=f75e1490]: Section Content Block • Vertical — Center Section
+          - treeitem [expanded] [active] [level=2] [selected] [ref=f75e1492] [cursor=pointer]:
+            - button "Collapse item" [expanded] [ref=f75e1493]
+            - paragraph [ref=f75e1501]: Team List • Grid • 3 Column — Vertical Section
+          - group [ref=f75e1502]:
+            - treeitem [expanded] [level=3] [ref=f75e1503] [cursor=pointer]:
+              - button "Collapse item" [expanded] [ref=f75e1504]
+              - paragraph [ref=f75e1512]: Team Item • Medium
+            - group [ref=f75e1513]:
+              - treeitem "Team Media • Media" [level=4] [ref=f75e1514] [cursor=pointer]:
+                - paragraph [ref=f75e1521]: Team Media • Media
+              - treeitem [level=4] [ref=f75e1523] [cursor=pointer]:
+                - paragraph [ref=f75e1529]: Heading
+              - treeitem "Text" [level=4] [ref=f75e1530] [cursor=pointer]:
+                - paragraph [ref=f75e1536]: Text
+              - treeitem "Paragraph" [level=4] [ref=f75e1538] [cursor=pointer]:
+                - paragraph [ref=f75e1544]: Paragraph
+              - treeitem "Expand item Links • Social Link List" [level=4] [ref=f75e1546] [cursor=pointer]:
+                - button "Expand item" [ref=f75e1547]
+                - paragraph [ref=f75e1556]: Links • Social Link List
+              - treeitem [level=4] [ref=f75e1558] [cursor=pointer]:
+                - paragraph [ref=f75e1564]: Button • Static
+                - button "Show layer" [ref=f75e1566]
+            - treeitem [level=3] [ref=f75e1570] [cursor=pointer]:
+              - button "Expand item" [ref=f75e1571]
+              - paragraph [ref=f75e1579]: Team Item • Medium
+            - treeitem [level=3] [ref=f75e1580] [cursor=pointer]:
+              - button "Expand item" [ref=f75e1581]
+              - paragraph [ref=f75e1589]: Team Item • Medium
+          - treeitem "Expand item Section CTA Block • Vertical" [level=2] [ref=f75e1590] [cursor=pointer]:
+            - button "Expand item" [ref=f75e1591]
+            - paragraph [ref=f75e1599]: Section CTA Block • Vertical
+        - treeitem [level=1] [ref=f75e1601] [cursor=pointer]:
+          - paragraph [ref=f75e1607]: Footer
+    - separator [ref=f75e348]
+  - navigation "Side navigation" [ref=f75e32]:
+    - generic [ref=f75e33]:
+      - button "Agents" [ref=f75e34] [cursor=pointer]
+      - button "Insert" [ref=f75e351] [cursor=pointer]
+      - button "Pages" [ref=f75e356] [cursor=pointer]
+      - button "Layers" [ref=f75e362] [cursor=pointer]
+      - button "Library" [ref=f75e101] [cursor=pointer]
+      - button "Styling" [ref=f75e369] [cursor=pointer]
+    - button "account menu" [ref=f75e108] [cursor=pointer]
+  - generic [ref=f75e111]:
+    - generic [ref=f75e113]:
+      - link "Back to sites" [ref=f75e114] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f75e118]:
+        - paragraph [ref=f75e121]:
+          - generic [ref=f75e122]: Untitled
+        - button "Project actions" [ref=f75e123] [cursor=pointer]
+    - tablist "Editor mode" [ref=f75e131]:
+      - generic [ref=f75e132]:
+        - tab "Brief" [ref=f75e134] [cursor=pointer]
+        - tab "Sitemap" [ref=f75e163] [cursor=pointer]
+        - tab "Wireframe" [ref=f75e211] [cursor=pointer]
+        - tab "Design" [selected] [ref=f75e241] [cursor=pointer]
+    - generic [ref=f75e276]:
+      - button "Share" [ref=f75e277] [cursor=pointer]
+      - button "Shop" [ref=f75e281] [cursor=pointer]
+      - button "Preview site" [ref=f75e286] [cursor=pointer]
+      - button "Site analytics" [ref=f75e290] [cursor=pointer]
+      - button "Site settings" [ref=f75e295] [cursor=pointer]
+      - button "Publish" [ref=f75e397] [cursor=pointer]
+  - generic [ref=f75e1104]:
+    - paragraph [ref=f75e1107]: Team List • Grid • 3 Column — Vertical Section
+    - generic [ref=f75e1119]:
+      - generic [ref=f75e1609]:
+        - paragraph [ref=f75e1611]: Layout
+        - generic [ref=f75e1612]:
+          - generic [ref=f75e1613]:
+            - generic [ref=f75e1614]: Style
+            - combobox "Style" [ref=f75e1617] [cursor=pointer]:
+              - generic: Standard
+          - generic [ref=f75e1620]:
+            - generic [ref=f75e1621]: List Type
+            - radiogroup "List Type" [ref=f75e1625]:
+              - radio "Grid" [checked] [ref=f75e1626] [cursor=pointer]
+              - radio "Slider" [ref=f75e1630] [cursor=pointer]
+          - generic [ref=f75e1635]:
+            - generic [ref=f75e1636]: Columns
+            - radiogroup "Columns" [ref=f75e1640]:
+              - radio "1" [ref=f75e1641] [cursor=pointer]
+              - radio "2" [ref=f75e1645] [cursor=pointer]
+              - radio "3" [checked] [ref=f75e1649] [cursor=pointer]
+              - radio "4" [ref=f75e1653] [cursor=pointer]
+      - generic [ref=f75e1658]:
+        - generic [ref=f75e1659]:
+          - paragraph [ref=f75e1660]: Global styling
+          - paragraph [ref=f75e1661]: Style Guide values which apply to these components on every page
+        - button "Spacing Edit" [ref=f75e1663] [cursor=pointer]:
+          - paragraph [ref=f75e1668]: Spacing
+          - generic [ref=f75e1669]: Edit
+  - generic [ref=f75e524]:
+    - button "Cursor" [disabled] [pressed] [ref=f75e525] [cursor=pointer]
+    - button "Hand tool" [ref=f75e529] [cursor=pointer]
+    - button "Comment" [ref=f75e533] [cursor=pointer]
+    - button "Zoom" [ref=f75e538] [cursor=pointer]:
+      - generic [ref=f75e539]: 42%
+    - radiogroup [ref=f75e547]:
+      - radio "Desktop" [checked] [ref=f75e548] [cursor=pointer]
+      - radio "Tablet" [ref=f75e553] [cursor=pointer]
+      - radio "Mobile" [ref=f75e557] [cursor=pointer]
+  - generic [ref=f75e1671]:
+    - generic:
+      - generic:
+        - button "Team / People Showcase":
+          - generic:
+            - paragraph: Team / People Showcase
+      - paragraph [ref=f75e1678]: Team List • Grid • 3 Column — Vertical Section
+  - button "Ask AI about Team List • Grid • 3 Column — Vertical Section" [ref=f75e1681] [cursor=pointer]
+  - button "Give us feedback" [ref=f75e1749] [cursor=pointer]

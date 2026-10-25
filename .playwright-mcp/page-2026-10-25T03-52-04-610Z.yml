@@ -1,0 +1,355 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic [aria-hidden]:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Home
+                            - generic:
+                              - generic:
+                                - button
+                          - generic:
+                            - generic:
+                              - generic [ref=f76e43]:
+                                - paragraph [ref=f76e44]: Navbar / Site Navigation
+                                - button [ref=f76e1104] [cursor=pointer]:
+                                  - generic [ref=f76e49]: Select a component
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic: Tagline
+                                              - heading [level=2]:
+                                                - generic:
+                                                  - textbox
+                                            - generic:
+                                              - generic:
+                                                - paragraph:
+                                                  - generic:
+                                                    - textbox
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - heading [level=4]:
+                                                      - generic: Full name
+                                                    - generic: Job title
+                                                  - paragraph:
+                                                    - generic:
+                                                      - textbox
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - heading [level=4]:
+                                                      - generic: Full name
+                                                    - generic: Job title
+                                                  - paragraph:
+                                                    - generic:
+                                                      - textbox
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - heading [level=4]:
+                                                      - generic: Full name
+                                                    - generic: Job title
+                                                  - paragraph:
+                                                    - generic:
+                                                      - textbox
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - heading [level=3]:
+                                                  - generic:
+                                                    - textbox
+                                                - paragraph:
+                                                  - generic:
+                                                    - textbox
+                                              - generic: Button
+                              - generic [ref=f76e216]:
+                                - paragraph [ref=f76e217]: Footer
+                                - button [ref=f76e1105] [cursor=pointer]:
+                                  - generic [ref=f76e222]: Select a component
+                        - generic:
+                          - button
+            - generic:
+              - region "Notifications alt+T"
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph: Layers
+                        - generic:
+                          - generic:
+                            - button
+                          - generic:
+                            - button
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - tree:
+                                  - treeitem [level=1]:
+                                    - generic:
+                                      - generic:
+                                        - paragraph: Navbar
+                                  - treeitem [expanded] [level=1] [selected]:
+                                    - button [expanded]
+                                    - generic:
+                                      - generic:
+                                        - paragraph: Team / People Showcase
+                                  - group:
+                                    - treeitem [level=2]:
+                                      - button
+                                      - generic:
+                                        - generic:
+                                          - paragraph: Section Content Block • Vertical — Center Section
+                                    - treeitem [level=2]:
+                                      - button
+                                      - generic:
+                                        - generic:
+                                          - paragraph: Team List • Grid • 3 Column — Vertical Section
+                                    - treeitem [level=2]:
+                                      - button
+                                      - generic:
+                                        - generic:
+                                          - paragraph: Section CTA Block • Vertical
+                                  - treeitem [level=1]:
+                                    - generic:
+                                      - generic:
+                                        - paragraph: Footer
+        - separator
+  - navigation [aria-hidden]:
+    - generic:
+      - button:
+        - generic: Agents
+      - button:
+        - generic: Insert
+      - button:
+        - generic: Pages
+      - button:
+        - generic: Layers
+      - button:
+        - generic: Library
+      - button:
+        - generic: Styling
+    - generic:
+      - button
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Team / People Showcase
+                  - generic:
+                    - generic:
+                      - button
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - group:
+                                  - paragraph: Name
+                                  - generic:
+                                    - generic:
+                                      - generic:
+                                        - textbox:
+                                          - /placeholder: Section name
+                                          - text: Team / People Showcase
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - button
+                                    - generic: Team Section • List • Center • Vertical
+                                    - generic:
+                                      - generic:
+                                        - generic:
+                                          - generic:
+                                            - generic:
+                                              - generic:
+                                                - generic:
+                                                  - generic:
+                                                    - generic:
+                                                      - generic: Tagline
+                                                      - heading [level=2]: Our Team
+                                                    - generic:
+                                                      - generic:
+                                                        - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                                                  - generic:
+                                                    - generic:
+                                                      - generic:
+                                                        - generic:
+                                                          - generic:
+                                                            - heading [level=4]: Full name
+                                                            - generic: Job title
+                                                          - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                                                      - generic:
+                                                        - generic:
+                                                          - generic:
+                                                            - heading [level=4]: Full name
+                                                            - generic: Job title
+                                                          - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                                                      - generic:
+                                                        - generic:
+                                                          - generic:
+                                                            - heading [level=4]: Full name
+                                                            - generic: Job title
+                                                          - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                                                  - generic:
+                                                    - generic:
+                                                      - generic:
+                                                        - heading [level=3]: Heading goes here
+                                                        - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                                                      - generic: Button
+                                - button:
+                                  - generic: Replace component
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - paragraph: CMS
+                                - paragraph: Connect a collection and the list fills itself. Add or edit an item once and it updates everywhere.
+                                - combobox [expanded]:
+                                  - generic: Choose a collection
+                          - generic:
+                            - generic:
+                              - generic:
+                                - paragraph: Layout
+                              - generic:
+                                - generic:
+                                  - generic: Direction
+                                  - generic:
+                                    - generic:
+                                      - radiogroup:
+                                        - radio [checked]
+                                        - radio
+                                - generic:
+                                  - generic: Alignment
+                                  - generic:
+                                    - generic:
+                                      - radiogroup:
+                                        - radio
+                                        - radio [checked]
+                              - generic:
+                                - generic:
+                                  - generic: Section Padding
+                                  - generic:
+                                    - generic:
+                                      - radiogroup:
+                                        - radio [checked]
+                                        - radio
+                          - generic:
+                            - generic:
+                              - generic:
+                                - paragraph: Styling
+                              - generic:
+                                - generic:
+                                  - generic: Color Scheme
+                                  - generic:
+                                    - combobox:
+                                      - generic: Scheme 1
+                          - generic:
+                            - generic:
+                              - generic:
+                                - paragraph: Global styling
+                                - paragraph: Style Guide values which apply to these components on every page
+                              - generic:
+                                - button:
+                                  - generic:
+                                    - paragraph: Spacing
+                                  - generic: Edit
+                                - button:
+                                  - generic:
+                                    - paragraph: Color Schemes
+                                  - generic: Edit
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - link:
+          - /url: /sites
+        - generic:
+          - generic:
+            - generic:
+              - paragraph:
+                - generic: Untitled
+          - button
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - tablist:
+              - generic:
+                - generic:
+                  - tab:
+                    - generic: Brief
+                - generic:
+                  - tab:
+                    - generic: Sitemap
+                - generic:
+                  - tab:
+                    - generic: Wireframe
+                - generic:
+                  - tab [selected]:
+                    - generic: Design
+    - generic:
+      - generic:
+        - button:
+          - generic: Share
+        - button
+        - button
+        - button
+        - button
+        - button
+        - button:
+          - generic: Publish
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - button [disabled] [pressed]
+        - button
+        - button
+        - generic:
+          - button:
+            - generic: 50%
+        - generic:
+          - radiogroup:
+            - radio [checked]
+            - radio
+            - radio
+  - button [ref=f76e1106] [cursor=pointer]
+  - button [ref=f76e1107] [cursor=pointer]
+  - button [ref=f76e1108]
+  - listbox [ref=f76e1109]:
+    - option "Team" [active] [ref=f76e1110] [cursor=pointer]
+    - button "New collection" [ref=f76e1115] [cursor=pointer]

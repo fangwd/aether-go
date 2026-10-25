@@ -1,0 +1,177 @@
+[     106ms] [INFO] [rsbuild] WebSocket connecting... @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[     153ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:33311
+[     235ms] [INFO] [rsbuild] WebSocket connected. @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[     236ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[     238ms] [WARNING] [Meta pixel] 371246391460828 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:205
+[     242ms] [LOG] [Churnkey] Embed v1.0.100 @ https://assets.churnkey.co/js/app.js?appId=mdnpklk56:97
+[     821ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, surface: editor, is_logged_in: true} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[     823ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[     825ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false, load_duration_ms: 305, reload_version: 0} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[     845ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: sitemap, page: shop} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[     895ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/ai-usage:0
+[   14871ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3001/commerce/v1/sites/01a17124-e09a-7510-a391-3e14a2a9e2a8/admin/products:0
+[   36854ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   37122ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   37203ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: sitemap, page: shop} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   38753ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   38955ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   39358ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   40160ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   41066ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   41314ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   41397ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: sitemap, page: shop} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   41762ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   44965ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   55729ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   56063ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   56141ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: sitemap, page: shop} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   76684ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   76758ms] [ERROR] [rsbuild] HMR update failed, performing full reload: Error: Aborted because ./base/cms/shop_source.ts is not accepted
+Update propagation: ./base/cms/shop_source.ts -> ./base/cms/collection_rows.ts -> ./base/editing/api/section/section_cms.ts -> ./base/editing/api/section/section.ts -> ./base/editing/api/section/index.ts -> ./frontend/editor/src/editor/selection_actions.tsx -> ./frontend/editor/src/editor/editor.tsx -> ./frontend/editor/entry.tsx
+    at applyHandler (http://localhost:3000/app/js/editor.js:207356:20)
+    at http://localhost:3000/app/js/editor.js:206773:10
+    at Array.map (<anonymous>)
+    at internalApply (http://localhost:3000/app/js/editor.js:206772:43)
+    at http://localhost:3000/app/js/editor.js:206747:15
+    at waitForBlockingPromises (http://localhost:3000/app/js/editor.js:206700:37)
+    at http://localhost:3000/app/js/editor.js:206745:13 @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1294
+[   76990ms] [LOG] [Churnkey] Embed v1.0.100 @ https://assets.churnkey.co/js/app.js?appId=mdnpklk56:97
+[   77000ms] [WARNING] [Meta pixel] 371246391460828 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:205
+[   77177ms] [INFO] [rsbuild] WebSocket connecting... @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[   77262ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:33311
+[   77445ms] [INFO] [rsbuild] WebSocket connected. @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[   77452ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   78061ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, surface: editor, is_logged_in: true} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   78071ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   78072ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false, load_duration_ms: 614, reload_version: 0} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   78094ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: sitemap, page: shop} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   78135ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/ai-usage:0
+[   78482ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   78684ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   79087ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   79889ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   81491ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   84694ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[   97376ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  101340ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  101839ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287

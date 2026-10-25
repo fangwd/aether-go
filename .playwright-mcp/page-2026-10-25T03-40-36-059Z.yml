@@ -1,0 +1,94 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic [aria-hidden]:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - heading [level=3]: No products yet
+                        - paragraph: Products you add here can be sold on your site
+                      - generic:
+                        - button:
+                          - generic: New product
+            - generic:
+              - region "Notifications alt+T"
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - paragraph: Shop
+                    - generic:
+                      - generic:
+                        - button
+                - generic:
+                  - tree:
+                    - treeitem [level=1] [selected]:
+                      - generic:
+                        - generic:
+                          - paragraph: Products
+                    - treeitem [level=1]:
+                      - generic:
+                        - generic:
+                          - paragraph: Categories
+                    - treeitem [level=1]:
+                      - generic:
+                        - generic:
+                          - paragraph: Inventory
+                    - treeitem [level=1]:
+                      - generic:
+                        - generic:
+                          - paragraph: Orders
+  - navigation [aria-hidden]:
+    - generic:
+      - button:
+        - generic: Agents
+      - button:
+        - generic: Shop
+    - generic:
+      - button
+  - generic [aria-hidden]:
+    - generic:
+      - button:
+        - generic: Back
+    - generic:
+      - generic:
+        - button:
+          - generic: Share
+        - button [pressed]
+        - button
+        - button
+        - button
+        - button:
+          - generic: Generate sitemap
+  - dialog [ref=f31e223]:
+    - generic [ref=f31e224]:
+      - heading "New product" [level=2] [ref=f31e226]
+      - generic [ref=f31e228]:
+        - generic [ref=f31e229]:
+          - paragraph [ref=f31e230]: Name
+          - textbox "Name" [active] [ref=f31e234]
+        - generic [ref=f31e235]:
+          - paragraph [ref=f31e236]: Price (USD)
+          - textbox "Price" [ref=f31e240]:
+            - /placeholder: "0.00"
+        - generic [ref=f31e241]:
+          - paragraph [ref=f31e242]: Stock on hand
+          - textbox "Stock on hand" [ref=f31e246]:
+            - /placeholder: Leave empty not to track stock
+        - generic [ref=f31e247]:
+          - paragraph [ref=f31e248]: Image
+          - button "Image" [ref=f31e249]
+      - generic [ref=f31e250]:
+        - button "Cancel" [ref=f31e251] [cursor=pointer]
+        - button "Create" [disabled] [ref=f31e255]
+      - button "Close dialog" [ref=f31e259] [cursor=pointer]

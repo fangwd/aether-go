@@ -1,0 +1,37 @@
+- generic [ref=f72e3]:
+  - generic [ref=f72e6]:
+    - generic [ref=f72e7]:
+      - generic [ref=f72e13]:
+        - button "Publish — switch Relume app" [ref=f72e15] [cursor=pointer]:
+          - generic [ref=f72e20]: Publish
+        - button "Create Site" [ref=f72e24] [cursor=pointer]
+        - searchbox "Search sites" [ref=f72e35]
+        - generic [ref=f72e37]:
+          - button [ref=f72e38] [cursor=pointer]:
+            - generic [ref=f72e42]: All sites
+            - paragraph [ref=f72e46]: "1"
+          - button "Created by me" [ref=f72e47] [cursor=pointer]
+          - button "Shared with me" [ref=f72e54] [cursor=pointer]
+        - button "Avatar Free" [ref=f72e61] [cursor=pointer]:
+          - generic [ref=f72e62]:
+            - img "Avatar" [ref=f72e63]
+            - paragraph
+          - generic [ref=f72e64]: Free
+      - main "Sites" [ref=f72e66]:
+        - heading "All sites" [level=1] [ref=f72e68]
+        - generic [ref=f72e71] [cursor=pointer]:
+          - link "Untitled" [ref=f72e72]:
+            - /url: /app/site/01a17124-e09a-7510-a391-3e14a2a9e2a8
+          - generic [ref=f72e73]:
+            - generic [ref=f72e79]: Aa
+            - generic "Shared with you" [ref=f72e91]: Shared
+          - generic [ref=f72e93]:
+            - generic [ref=f72e94]:
+              - paragraph [ref=f72e99]: Untitled
+              - paragraph [ref=f72e100]: 6 minutes ago
+            - generic [ref=f72e101]:
+              - generic:
+                - button "More options"
+    - generic:
+      - region "Notifications alt+T"
+  - status "Loading Publish" [ref=f72e102]

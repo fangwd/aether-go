@@ -1,0 +1,37 @@
+- generic [active] [ref=f75e1]:
+  - generic [ref=f75e6]:
+    - generic [ref=f75e15]:
+      - generic [ref=f75e20]:
+        - heading "Your brief is empty" [level=3] [ref=f75e21]
+        - paragraph [ref=f75e22]: Tell Relume what you're building and it'll turn that into a brief your agents can work from.
+      - generic [ref=f75e23]:
+        - button "Generate brief" [ref=f75e24] [cursor=pointer]
+        - button "Write your own" [ref=f75e28] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - navigation "Side navigation" [ref=f75e32]:
+    - generic [ref=f75e33]:
+      - button "Agents" [ref=f75e34] [cursor=pointer]
+      - button "Library" [ref=f75e101] [cursor=pointer]
+    - button "account menu" [ref=f75e108] [cursor=pointer]
+  - generic [ref=f75e111]:
+    - generic [ref=f75e113]:
+      - link "Back to sites" [ref=f75e114] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f75e118]:
+        - paragraph [ref=f75e121]:
+          - generic [ref=f75e122]: Untitled
+        - button "Project actions" [ref=f75e123] [cursor=pointer]
+    - tablist "Editor mode" [ref=f75e131]:
+      - generic [ref=f75e132]:
+        - tab "Brief" [selected] [ref=f75e134] [cursor=pointer]
+        - tab "Sitemap" [ref=f75e163] [cursor=pointer]
+        - tab "Wireframe" [ref=f75e211] [cursor=pointer]
+        - tab "Design" [ref=f75e241] [cursor=pointer]
+    - generic [ref=f75e276]:
+      - button "Share" [ref=f75e277] [cursor=pointer]
+      - button "Shop" [ref=f75e281] [cursor=pointer]
+      - button "Preview site" [ref=f75e286] [cursor=pointer]
+      - button "Site analytics" [ref=f75e290] [cursor=pointer]
+      - button "Site settings" [ref=f75e295] [cursor=pointer]
+      - button "Generate sitemap" [ref=f75e300] [cursor=pointer]

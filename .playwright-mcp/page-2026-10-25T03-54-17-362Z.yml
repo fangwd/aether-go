@@ -1,0 +1,140 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic [aria-hidden]:
+              - generic:
+                - generic:
+                  - generic:
+                    - paragraph: Products
+                    - paragraph: "1"
+                    - button:
+                      - generic: New product
+                  - generic:
+                    - table:
+                      - rowgroup:
+                        - row:
+                          - columnheader
+                          - columnheader:
+                            - generic:
+                              - paragraph: Name
+                          - columnheader:
+                            - generic:
+                              - paragraph: Price
+                          - columnheader:
+                            - generic:
+                              - paragraph: Stock
+                          - columnheader:
+                            - generic:
+                              - paragraph: Status
+                      - rowgroup:
+                        - button:
+                          - cell
+                          - cell:
+                            - generic: Classic Tee
+                          - cell:
+                            - generic: US$25.00
+                          - cell:
+                            - generic: "12"
+                          - cell:
+                            - generic: Active
+            - generic:
+              - region "Notifications alt+T"
+  - generic [aria-hidden]:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - paragraph: Shop
+                    - generic:
+                      - generic:
+                        - button
+                - generic:
+                  - tree:
+                    - treeitem [level=1] [selected]:
+                      - generic:
+                        - generic:
+                          - paragraph: Products
+                    - treeitem [level=1]:
+                      - generic:
+                        - generic:
+                          - paragraph: Categories
+                    - treeitem [level=1]:
+                      - generic:
+                        - generic:
+                          - paragraph: Inventory
+                    - treeitem [level=1]:
+                      - generic:
+                        - generic:
+                          - paragraph: Orders
+  - navigation [aria-hidden]:
+    - generic:
+      - button:
+        - generic: Agents
+      - button:
+        - generic: Shop
+    - generic:
+      - button
+  - generic [aria-hidden]:
+    - generic:
+      - button:
+        - generic: Back
+    - generic:
+      - generic:
+        - button:
+          - generic: Share
+        - button
+        - button [pressed]
+        - button
+        - button
+        - button
+        - button:
+          - generic: Publish
+  - dialog [ref=f78e695]:
+    - generic [ref=f78e696]:
+      - heading "Classic Tee" [level=2] [ref=f78e698]
+      - tablist "Product" [ref=f78e701]:
+        - generic [ref=f78e702]:
+          - tab "Details" [selected] [ref=f78e704] [cursor=pointer]
+          - tab "Variants" [ref=f78e707] [cursor=pointer]
+          - tab "Add-ons" [ref=f78e710] [cursor=pointer]
+      - generic [ref=f78e713]:
+        - generic [ref=f78e714]:
+          - paragraph [ref=f78e715]: Name
+          - textbox "Name" [active] [ref=f78e719]: Classic Tee
+        - generic [ref=f78e720]:
+          - paragraph [ref=f78e721]: Slug (the product page's address)
+          - textbox "Slug" [ref=f78e725]: classic-tee
+        - generic [ref=f78e726]:
+          - generic [ref=f78e727]:
+            - paragraph [ref=f78e728]: Price (USD)
+            - textbox "Price" [ref=f78e732]: "25.00"
+          - generic [ref=f78e733]:
+            - paragraph [ref=f78e734]: Compare-at price
+            - textbox "Compare-at price" [ref=f78e738]:
+              - /placeholder: None
+        - generic [ref=f78e739]:
+          - paragraph [ref=f78e740]: Status
+          - combobox "Status" [ref=f78e741] [cursor=pointer]:
+            - generic: Active
+        - generic [ref=f78e744]:
+          - paragraph [ref=f78e745]: Short description
+          - textbox "Short description" [ref=f78e749]
+        - generic [ref=f78e750]:
+          - paragraph [ref=f78e751]: Description
+          - textbox "Description" [ref=f78e753]
+        - generic [ref=f78e754]:
+          - paragraph [ref=f78e755]: Images
+          - generic [ref=f78e756]:
+            - button "Remove image" [ref=f78e758] [cursor=pointer]
+            - generic [ref=f78e762] [cursor=pointer]
+      - generic [ref=f78e765]:
+        - button "Close" [ref=f78e766] [cursor=pointer]
+        - button "Save" [disabled] [ref=f78e770]
+      - button "Close dialog" [ref=f78e774] [cursor=pointer]

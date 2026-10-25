@@ -1,0 +1,68 @@
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic [aria-hidden]:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - button:
+                              - generic: Publish
+                          - generic:
+                            - button:
+                              - generic: Create Site
+                          - generic:
+                            - generic:
+                              - searchbox
+                          - generic:
+                            - generic:
+                              - button:
+                                - generic: All sites
+                                - generic:
+                                  - generic:
+                                    - paragraph: "1"
+                              - button:
+                                - generic: Created by me
+                              - button:
+                                - generic: Shared with me
+                          - generic:
+                            - button:
+                              - generic: Free
+              - main:
+                - generic:
+                  - heading [level=1]: All sites
+                - generic:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: /app/site/01a17124-e09a-7510-a391-3e14a2a9e2a8
+                      - generic:
+                        - generic:
+                          - generic [aria-hidden]:
+                            - generic: Aa
+                      - generic:
+                        - generic:
+                          - paragraph: Untitled
+                          - paragraph: 4 minutes ago
+                        - generic:
+                          - generic:
+                            - button
+            - generic:
+              - region "Notifications alt+T"
+      - status [aria-hidden]
+  - dialog [active] [ref=f58e2]:
+    - generic [ref=f58e3]:
+      - generic [ref=f58e4]:
+        - 'button "Play video: Welcome to Publish" [ref=f58e6] [cursor=pointer]'
+        - generic [ref=f58e9]:
+          - heading "Welcome to Publish" [level=2] [ref=f58e10]
+          - paragraph [ref=f58e11]: Tell Relume what you’re building. Get a sitemap, wireframes and a designed site — live on the web, in minutes not weeks.
+      - generic [ref=f58e12]:
+        - button "Skip" [ref=f58e13] [cursor=pointer]
+        - button "Start building" [ref=f58e17] [cursor=pointer]

@@ -1,0 +1,39 @@
+- generic [active] [ref=f30e1]:
+  - generic [ref=f30e5]:
+    - main [ref=f30e6]:
+      - generic [ref=f30e7]:
+        - generic [ref=f30e9]:
+          - list [ref=f30e16]:
+            - listitem [ref=f30e17]: Brief
+            - listitem [ref=f30e21]: Sitemap
+            - listitem [ref=f30e26]: Wireframe
+            - listitem [ref=f30e31]: Design
+            - listitem [ref=f30e35]: Publish
+          - heading "Dump in everything you've got. We'll turn it into a brief." [level=1] [ref=f30e40]:
+            - generic [ref=f30e41]: Dump in everything you've got.
+            - generic [ref=f30e42]: We'll turn it into a brief.
+          - paragraph [ref=f30e43]:
+            - generic [ref=f30e44]: The old site, a pitch deck, meeting notes, a transcript — the more context the better.
+            - generic [ref=f30e45]: The brief becomes the foundation for everything we build.
+        - generic [ref=f30e47]:
+          - generic [ref=f30e49]:
+            - textbox "Chat message" [ref=f30e51]:
+              - /placeholder: Desc
+            - generic [ref=f30e52]:
+              - generic [ref=f30e53]:
+                - button "Attach files" [ref=f30e54] [cursor=pointer]
+                - generic [ref=f30e61]: or paste a URL
+              - generic [ref=f30e62]:
+                - combobox "Skip to Design" [ref=f30e63] [cursor=pointer]
+                - button "Send message" [disabled] [ref=f30e67]
+          - generic [ref=f30e71]:
+            - paragraph [ref=f30e72]: Try an example
+            - generic [ref=f30e73]:
+              - button "Plumbing" [ref=f30e74] [cursor=pointer]
+              - button "Architect" [ref=f30e81] [cursor=pointer]
+              - button "Lawyer" [ref=f30e89] [cursor=pointer]
+              - button "Gym" [ref=f30e97] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - link "Back to sites" [ref=f30e106] [cursor=pointer]:
+    - /url: /sites

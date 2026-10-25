@@ -1,0 +1,426 @@
+- generic [active] [ref=f75e1]:
+  - generic [ref=f75e6]:
+    - generic [ref=f75e409]:
+      - generic [ref=f75e410]:
+        - generic [ref=f75e411] [cursor=pointer]:
+          - generic [ref=f75e415]: Home
+          - button "More options" [ref=f75e419]
+        - generic [ref=f75e424]:
+          - generic [ref=f75e440]:
+            - paragraph [ref=f75e441]: Navbar / Site Navigation
+            - button "Select a component" [ref=f75e442] [cursor=pointer]
+          - button "Section" [ref=f75e452] [cursor=pointer]
+          - generic [ref=f75e508]:
+            - paragraph [ref=f75e509]: Footer
+            - button "Select a component" [ref=f75e510] [cursor=pointer]
+      - button "Add page" [ref=f75e518] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f75e316]:
+    - generic [ref=f75e598]:
+      - generic [ref=f75e599]:
+        - generic [ref=f75e600]:
+          - generic [ref=f75e697]:
+            - button "Back" [ref=f75e699] [cursor=pointer]
+            - paragraph [ref=f75e703]: Team / People Showcase
+          - button "Collapse panel" [ref=f75e604] [cursor=pointer]
+        - searchbox "Search" [ref=f75e618]
+      - generic [ref=f75e706]:
+        - generic [ref=f75e708] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e709]
+          - generic [ref=f75e710]: Team Section • List • Center • Vertical
+          - generic [ref=f75e715]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading "Full name" [level=4]
+                                - generic: Job title
+                              - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading "Full name" [level=4]
+                                - generic: Job title
+                              - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading "Full name" [level=4]
+                                - generic: Job title
+                              - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - heading "Heading goes here" [level=3]
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                          - generic: Button
+        - generic [ref=f75e718] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e719]
+          - generic [ref=f75e720]: Team Section • List • Center • Vertical
+          - generic [ref=f75e725]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - heading "Heading goes here" [level=3]
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                              - generic: Button
+        - generic [ref=f75e728] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e729]
+          - generic [ref=f75e730]: Team Section • List • Center • Vertical
+          - generic [ref=f75e735]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading "Heading goes here" [level=3]
+                                - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                              - generic: Button
+        - generic [ref=f75e738] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e739]
+          - generic [ref=f75e740]: Team Section • List • Center • Vertical
+          - generic [ref=f75e745]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - heading "Heading goes here" [level=3]
+                              - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                          - generic: Button
+        - generic [ref=f75e748] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e749]
+          - generic [ref=f75e750]: Team Section • List • Center • Vertical
+          - generic [ref=f75e755]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - heading "Heading goes here" [level=3]
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                          - generic: Button
+        - generic [ref=f75e758] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e759]
+          - generic [ref=f75e760]: Team Section • List • Center • Vertical
+          - generic [ref=f75e765]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - heading "Heading goes here" [level=3]
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                              - generic: Button
+        - generic [ref=f75e768] [cursor=pointer]:
+          - button "Team Section • List • Center • Vertical" [ref=f75e769]
+          - generic [ref=f75e770]: Team Section • List • Center • Vertical
+          - generic [ref=f75e775]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Tagline
+                          - heading "Our Team" [level=2]
+                        - generic:
+                          - generic:
+                            - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic:
+                                    - heading "Full name" [level=3]
+                                    - generic: Job title
+                                  - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - heading "Heading goes here" [level=3]
+                                - paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique, at fermentum eros mi vitae diam.
+                              - generic: Button
+    - separator [ref=f75e348]
+  - navigation "Side navigation" [ref=f75e32]:
+    - generic [ref=f75e33]:
+      - button "Agents" [ref=f75e34] [cursor=pointer]
+      - button "Insert" [ref=f75e351] [cursor=pointer]
+      - button "Pages" [ref=f75e356] [cursor=pointer]
+      - button "Layers" [ref=f75e362] [cursor=pointer]
+      - button "Library" [ref=f75e101] [cursor=pointer]
+      - button "Styling" [ref=f75e369] [cursor=pointer]
+    - button "account menu" [ref=f75e108] [cursor=pointer]
+  - generic [ref=f75e111]:
+    - generic [ref=f75e113]:
+      - link "Back to sites" [ref=f75e114] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f75e118]:
+        - paragraph [ref=f75e121]:
+          - generic [ref=f75e122]: Untitled
+        - button "Project actions" [ref=f75e123] [cursor=pointer]
+    - tablist "Editor mode" [ref=f75e131]:
+      - generic [ref=f75e132]:
+        - tab "Brief" [ref=f75e134] [cursor=pointer]
+        - tab "Sitemap" [ref=f75e163] [cursor=pointer]
+        - tab "Wireframe" [ref=f75e211] [cursor=pointer]
+        - tab "Design" [selected] [ref=f75e241] [cursor=pointer]
+    - generic [ref=f75e276]:
+      - button "Share" [ref=f75e277] [cursor=pointer]
+      - button "Shop" [ref=f75e281] [cursor=pointer]
+      - button "Preview site" [ref=f75e286] [cursor=pointer]
+      - button "Site analytics" [ref=f75e290] [cursor=pointer]
+      - button "Site settings" [ref=f75e295] [cursor=pointer]
+      - button "Publish" [ref=f75e397] [cursor=pointer]
+  - generic [ref=f75e524]:
+    - button "Cursor" [disabled] [pressed] [ref=f75e525] [cursor=pointer]
+    - button "Hand tool" [ref=f75e529] [cursor=pointer]
+    - button "Comment" [ref=f75e533] [cursor=pointer]
+    - button "Zoom" [ref=f75e538] [cursor=pointer]:
+      - generic [ref=f75e539]: 50%
+    - radiogroup [ref=f75e547]:
+      - radio "Desktop" [checked] [ref=f75e548] [cursor=pointer]
+      - radio "Tablet" [ref=f75e553] [cursor=pointer]
+      - radio "Mobile" [ref=f75e557] [cursor=pointer]

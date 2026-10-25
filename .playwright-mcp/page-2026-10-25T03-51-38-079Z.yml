@@ -1,0 +1,101 @@
+- generic [active] [ref=f76e1]:
+  - generic [ref=f76e6]:
+    - generic [ref=f76e12]:
+      - generic [ref=f76e13]:
+        - generic [ref=f76e14] [cursor=pointer]:
+          - generic [ref=f76e18]: Home
+          - button "More options" [ref=f76e22]
+        - generic [ref=f76e27]:
+          - generic [ref=f76e43]:
+            - paragraph [ref=f76e44]: Navbar / Site Navigation
+            - button "Select a component" [ref=f76e45] [cursor=pointer]
+          - generic [ref=f76e57]:
+            - generic [ref=f76e58]:
+              - generic [ref=f76e59]:
+                - generic [ref=f76e60]: Tagline
+                - heading [level=2] [ref=f76e65]:
+                  - textbox [ref=f76e67]
+              - paragraph [ref=f76e70]:
+                - textbox [ref=f76e72]
+            - generic [ref=f76e74]:
+              - generic [ref=f76e79]:
+                - generic [ref=f76e80]:
+                  - heading "Full name" [level=4] [ref=f76e81]
+                  - generic [ref=f76e84]: Job title
+                - paragraph [ref=f76e87]:
+                  - textbox [ref=f76e89]
+              - generic [ref=f76e105]:
+                - generic [ref=f76e106]:
+                  - heading "Full name" [level=4] [ref=f76e107]
+                  - generic [ref=f76e110]: Job title
+                - paragraph [ref=f76e113]:
+                  - textbox [ref=f76e115]
+              - generic [ref=f76e131]:
+                - generic [ref=f76e132]:
+                  - heading "Full name" [level=4] [ref=f76e133]
+                  - generic [ref=f76e136]: Job title
+                - paragraph [ref=f76e139]:
+                  - textbox [ref=f76e141]
+            - generic [ref=f76e154]:
+              - generic [ref=f76e155]:
+                - heading [level=3] [ref=f76e156]:
+                  - textbox [ref=f76e158]
+                - paragraph [ref=f76e159]:
+                  - textbox [ref=f76e161]
+              - generic [ref=f76e162]: Button
+          - generic [ref=f76e216]:
+            - paragraph [ref=f76e217]: Footer
+            - button "Select a component" [ref=f76e218] [cursor=pointer]
+      - button "Add page" [ref=f76e226] [cursor=pointer]
+    - generic:
+      - region "Notifications alt+T"
+  - generic [ref=f76e232]:
+    - generic [ref=f76e238]:
+      - generic [ref=f76e240]:
+        - paragraph [ref=f76e241]: Layers
+        - button "Collapse panel" [ref=f76e244] [cursor=pointer]
+      - generic [ref=f76e261]:
+        - heading "No page selected" [level=3] [ref=f76e262]
+        - paragraph [ref=f76e263]: Select a page to see its layers
+    - separator [ref=f76e264]
+  - navigation "Side navigation" [ref=f76e267]:
+    - generic [ref=f76e268]:
+      - button "Agents" [ref=f76e269] [cursor=pointer]
+      - button "Insert" [ref=f76e336] [cursor=pointer]
+      - button "Pages" [ref=f76e341] [cursor=pointer]
+      - button "Layers" [ref=f76e347] [cursor=pointer]
+      - button "Library" [ref=f76e354] [cursor=pointer]
+      - button "Styling" [ref=f76e360] [cursor=pointer]
+    - button "account menu" [ref=f76e389] [cursor=pointer]
+  - generic [ref=f76e392]:
+    - generic [ref=f76e394]:
+      - link "Back to sites" [ref=f76e395] [cursor=pointer]:
+        - /url: /sites
+      - generic [ref=f76e399]:
+        - paragraph [ref=f76e402]:
+          - generic [ref=f76e403]: Untitled
+        - button "Project actions" [ref=f76e404] [cursor=pointer]
+    - tablist "Editor mode" [ref=f76e412]:
+      - generic [ref=f76e413]:
+        - tab "Brief" [ref=f76e415] [cursor=pointer]
+        - tab "Sitemap" [ref=f76e444] [cursor=pointer]
+        - tab "Wireframe" [ref=f76e492] [cursor=pointer]
+        - tab "Design" [selected] [ref=f76e522] [cursor=pointer]
+    - generic [ref=f76e557]:
+      - button "Share" [ref=f76e558] [cursor=pointer]
+      - button "CMS" [ref=f76e562] [cursor=pointer]
+      - button "Shop" [ref=f76e568] [cursor=pointer]
+      - button "Preview site" [ref=f76e573] [cursor=pointer]
+      - button "Site analytics" [ref=f76e577] [cursor=pointer]
+      - button "Site settings" [ref=f76e582] [cursor=pointer]
+      - button "Publish" [ref=f76e587] [cursor=pointer]
+  - generic [ref=f76e597]:
+    - button "Cursor" [disabled] [pressed] [ref=f76e598] [cursor=pointer]
+    - button "Hand tool" [ref=f76e602] [cursor=pointer]
+    - button "Comment" [ref=f76e606] [cursor=pointer]
+    - button "Zoom" [ref=f76e611] [cursor=pointer]:
+      - generic [ref=f76e612]: 50%
+    - radiogroup [ref=f76e620]:
+      - radio "Desktop" [checked] [ref=f76e621] [cursor=pointer]
+      - radio "Tablet" [ref=f76e626] [cursor=pointer]
+      - radio "Mobile" [ref=f76e630] [cursor=pointer]

@@ -1,0 +1,183 @@
+[   63080ms] [WARNING] [Meta pixel] 371246391460828 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:205
+[   63131ms] [LOG] [Churnkey] Embed v1.0.100 @ https://assets.churnkey.co/js/app.js?appId=mdnpklk56:97
+[   63228ms] [INFO] [rsbuild] WebSocket connecting... @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[   63280ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:33311
+[   63397ms] [INFO] [rsbuild] WebSocket connected. @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[   63403ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[   63916ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, surface: editor, is_logged_in: true} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   63919ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   63921ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false, load_duration_ms: 518, reload_version: 0} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   64065ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64065ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64066ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64066ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64068ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64069ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64069ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64070ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   64119ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8000/v1/font_family/G-Inter:0
+[   64132ms] BadRequest: HTTP 404: {"detail":"Font family not found","requestId":""}
+    at http://localhost:3000/app/js/frontend_base_global_css-frontend_base_monitoring_initialize_ts-frontend_base_query_client_ts-a4df71.js:1121:33
+[   79918ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: design, panel: layers, method: click} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[   96720ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96720ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96720ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96721ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96723ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96723ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96723ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   96725ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8512
+[   97006ms] [ERROR] Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://react.dev/link/setstate-in-render ReadOnlyFrameView ReadOnlyFrameView ReadOnlyFrameView @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:22820
+[  110518ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: design, action: bind, target: list, collection_id: shop.team, item_component_id: 62e598f5-5644-4362-8223-64b44d8a28db} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  142703ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  142757ms] [ERROR] [rsbuild] HMR update failed, performing full reload: Error: Aborted because ./base/cms/collection_rows.ts is not accepted
+Update propagation: ./base/cms/collection_rows.ts -> ./base/editing/api/section/section_cms.ts -> ./base/editing/api/section/section.ts -> ./base/editing/api/section/index.ts -> ./frontend/editor/src/editor/selection_actions.tsx -> ./frontend/editor/src/editor/editor.tsx -> ./frontend/editor/entry.tsx
+    at applyHandler (http://localhost:3000/app/js/editor.js:207353:20)
+    at http://localhost:3000/app/js/editor.js:206770:10
+    at Array.map (<anonymous>)
+    at internalApply (http://localhost:3000/app/js/editor.js:206769:43)
+    at http://localhost:3000/app/js/editor.js:206744:15
+    at waitForBlockingPromises (http://localhost:3000/app/js/editor.js:206697:37)
+    at http://localhost:3000/app/js/editor.js:206742:13 @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1294
+[  142915ms] [LOG] [Churnkey] Embed v1.0.100 @ https://assets.churnkey.co/js/app.js?appId=mdnpklk56:97
+[  142918ms] [WARNING] [Meta pixel] 371246391460828 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:205
+[  143093ms] [INFO] [rsbuild] WebSocket connecting... @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[  143147ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:33311
+[  143292ms] [INFO] [rsbuild] WebSocket connected. @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[  143299ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  143803ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, surface: editor, is_logged_in: true} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  143805ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  143806ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false, load_duration_ms: 509, reload_version: 0} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  143960ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143961ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143961ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143962ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143965ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143965ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143966ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  143967ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  144055ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8000/v1/font_family/G-Inter:0
+[  144066ms] BadRequest: HTTP 404: {"detail":"Font family not found","requestId":""}
+    at http://localhost:3000/app/js/frontend_base_global_css-frontend_base_monitoring_initialize_ts-frontend_base_query_client_ts-a4df71.js:1121:33
+[  144690ms] [ERROR] WebSocket connection to 'ws://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8?reject_close_codes=1&library_version=live&ticket=Fk2xdwAW0_bbaae6JBMDGDsOoA03OruuaHYgzzL_fuI' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/editor.js:45462
+[  144900ms] [ERROR] WebSocket connection to 'ws://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8?reject_close_codes=1&library_version=live&ticket=YoTlxBc7r62c80p_Rs_PbAbidw1P2MxzNxDargnYQmQ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/editor.js:45462
+[  145315ms] [ERROR] WebSocket connection to 'ws://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8?reject_close_codes=1&library_version=live&ticket=eiXQOKZgHEZznyWZ8IokTWPhc-WBLUPumj37QcLX-Ek' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/editor.js:45462
+[  146124ms] [ERROR] WebSocket connection to 'ws://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8?reject_close_codes=1&library_version=live&ticket=wbTfm2Nubk116R2esMzFVDJP5ufYA26SibuKkIBoaa0' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/app/js/editor.js:45462
+[  147727ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[  150929ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3001/site/01a17124-e09a-7510-a391-3e14a2a9e2a8/sync-ticket:0
+[  172645ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  172925ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  195707ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  215897ms] [WARNING] [Meta pixel] 371246391460828 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:205
+[  215908ms] [LOG] [Churnkey] Embed v1.0.100 @ https://assets.churnkey.co/js/app.js?appId=mdnpklk56:97
+[  216095ms] [INFO] [rsbuild] WebSocket connecting... @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[  216149ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/app/js/vendors-node_modules_rspack_core_dist_cssExtractHmr_js-node_modules_hoist-non-react-statics_d-558cc6.js:33311
+[  216277ms] [INFO] [rsbuild] WebSocket connected. @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1280
+[  216282ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  216911ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, surface: editor, is_logged_in: true} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  216913ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  216915ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, is_logged_in: true, is_new_project: false, load_duration_ms: 633, reload_version: 0} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  217055ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217056ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217056ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217056ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217058ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217059ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217059ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217060ms] [WARNING] [tree] Component "Slider Dot" (id=el-slider-dot, element=<button>) has no textContent and no children — it will render empty. @ http://localhost:3000/app/js/frontend_base_publish_domain_ts-frontend_base_ui_dnd_index_ts-frontend_base_useDebounce_ts.js:8513
+[  217117ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8000/v1/font_family/G-Inter:0
+[  217146ms] BadRequest: HTTP 404: {"detail":"Font family not found","requestId":""}
+    at http://localhost:3000/app/js/frontend_base_global_css-frontend_base_monitoring_initialize_ts-frontend_base_query_client_ts-a4df71.js:1121:33
+[  232189ms] [TABLE] {userPlanName: client, project_id: 01a17124-e09a-7510-a391-3e14a2a9e2a8, editorMode: design, page: shop} @ http://localhost:3000/app/js/base_dependency-container_ts-frontend_base_analytics_index_ts-frontend_base_keyboard_shortcut-8945ca.js:352
+[  272136ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
+[  272436ms] [WARNING] File: [36m./node_modules/@huggingface/transformers/dist/transformers.web.js:1:1[39m
+  ⚠ Module parse warning:
+[2m  ╰─▶ [0m  ⚠ Critical dependency: Accessing import.meta directly is unsupported (only property access or destructuring is supported)
+            ╭─[5101:36]
+       5099 │     // Although we get the warning: "Accessing import.meta directly is unsupported (only property access or destructuring is supported)",
+       5100 │     // it is safe to ignore since the bundled value (`{}`) isn't used for CommonJS environments (we use __dirname instead).
+       5101 │     const _import_meta_url = Object(import.meta).url;
+            ·                                     ───────────
+       5102 │
+       5103 │     if (_import_meta_url) {
+            ╰──── @ http://localhost:3000/app/js/vendors-node_modules_react_index_js-node_modules_rsbuild_core_dist_client_overlay_js-node_mod-bd800f.js:1287
